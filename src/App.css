@@ -1,38 +1,229 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Playfair+Display:wght@600&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  overflow: hidden;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
+}
+
+.top-right {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  z-index: 2;
+}
+
+.top-right h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.top-right h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+  position: absolute;
+  left: 100px; /* Adjust for horizontal positioning */
+  top: 30%; /* Adjust for vertical positioning */
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent card */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: block;
+  align-items: center;
+}
+
+.card input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  width: 550px;
+  margin-right: 10px;
+}
+
+.card button {
+  padding: 15px;
+  font-size: 16px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 200px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #444;
+}
+
+.new-card {
+  position: absolute;
+  left: 700px; /* Adjust to space the new card */
+  top: 30%; /* Align with the previous card */
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 300px; /* Fixed width */
+  margin-left: 20%; /* Space between the new card and previous card */
+}
+
+.new-card h2 {
+  margin-bottom: 10px;
+}
+
+.new-card p {
+  margin-bottom: 20px;
+}
+
+.start-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px; /* Rounded bottom corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #333;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: black;
+}
+
+.close-button:hover {
+  color: red;
+}
+
+.bottom-card {
+  position: absolute;
+  bottom: 5px;
+  background-color: rgba(247, 215, 215, 0.95);
+  color: rgb(22, 22, 22);
+  padding: 30px;
+  width: 98%;
+  max-width: 95%;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 2;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.back-button {
+  margin-bottom: 20px;
+}
+
+.back-button button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.select {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.start-button {
+  width: 100px;
+  padding: 10px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.image-section {
+  display: flex;
+  flex-direction: column;
+  top: 500px;
+  align-items: center;
+  width: 40%;
+}
+
+.image-section h2 {
+  margin-bottom: 200px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
 }
