@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./App.css"; // Import your CSS for styling
+import "./App.css";
 import ProfessionPage from "./Profession.js";
 
-const Home = ({onStart}) => {
+const Home = ({ onStart }) => {
   const [name, setName] = useState("");
-  const [showNewCard, setShowNewCard] = useState(false); // State to show the new card
+  const [showNewCard, setShowNewCard] = useState(false);
 
   const handleInputChange = (e) => {
     setName(e.target.value);
@@ -12,29 +12,28 @@ const Home = ({onStart}) => {
 
   const handleSubmit = () => {
     if (name) {
-      setShowNewCard(true); // Show the new card after name submission
+      setShowNewCard(true);
     }
   };
 
   const handleCloseCard = () => {
-    setShowNewCard(false); // Hide the new card when the cross button is clicked
+    setShowNewCard(false);
   };
 
   return (
-    <div className="container">
-      <video autoPlay muted loop className="video-background">
-        <source
-          src="https://videos.pexels.com/video-files/5438948/5438948-uhd_2560_1440_25fps.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
-      <div className="overlay"></div>
-      <div className="top-right">
-        <h1>Communicate to Conquer</h1>
+    <div className="headline-section">
+      <div className="background-video">
+        <video autoPlay muted loop playsInline>
+          <source src="https://videos.pexels.com/video-files/8428331/8428331-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
+      <header className="headline">
+        <h1>Cognitive Vox</h1>
+        <p>Smart Psychiatry, Simplified!</p>
+      </header>
       <div className="card">
-        <h2>What name do you prefer !</h2>
+        <h2>What name feels right for you?</h2>
         <input
           type="text"
           placeholder="Enter your name to start ..."
@@ -44,19 +43,14 @@ const Home = ({onStart}) => {
         <button onClick={handleSubmit}>→</button>
       </div>
 
-      {/* Conditionally render the new card when the name is submitted */}
       {showNewCard && (
         <div className="new-card">
           <button className="close-button" onClick={handleCloseCard}>×</button>
           <h2>Hello, {name}!</h2>
-          <p>Are you ready for the evaluation and improvement?</p>
+          <p>Unlock deeper patient insights Monitor mental states, streamline your schedule. Ready to get started</p>
           <button className="start-button" onClick={onStart}>Start</button>
         </div>
       )}
-
-      <div className="bottom-card">
-        <p>This is a text inside the bottom card. Customize this message as needed.</p>
-      </div>
     </div>
   );
 };
@@ -65,13 +59,56 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState("home");
 
   const handleStartClick = () => {
-    setCurrentPage("profession"); // Change to the profession page when "Start" is clicked
+    setCurrentPage("profession");
   };
 
   return (
-    <div>
+    <div className="container">
       {currentPage === "home" ? (
-        <Home onStart={handleStartClick} />
+        <>
+          <Home onStart={handleStartClick} />
+
+          {/* These sections appear only on the home page */}
+          <section className="features">
+            <h2>Why Choose Us?</h2>
+            <div className="feature-grid">
+              <div className="feature-card">
+                <h3>AI-Powered</h3>
+                <p> Get AI-powered insights into your patients' emotions</p>
+              </div>
+              <div className="feature-card">
+                <h3> Conversational & Engaging</h3>
+                <p>Make informed decisions about therapy needs.</p>
+              </div>
+              <div className="feature-card">
+                <h3>Personalized Insights</h3>
+                <p>Always here to help you.</p>
+              </div>
+            </div>
+          </section>
+
+          <section className="trust">
+            <h2>Trusted by Thousands</h2>
+            <div className="testimonials">
+              <div className="testimonial">
+                <p>"Amazing service! It changed how we work."</p>
+                <h4>- John Doe</h4>
+              </div>
+              <div className="testimonial">
+                <p>"Super easy to use and very efficient."</p>
+                <h4>- Jane Smith</h4>
+              </div>
+              <div className="testimonial">
+                <p>"A must-have tool for every business."</p>
+                <h4>- David Lee</h4>
+              </div>
+            </div>
+          </section>
+
+          <footer className="cta">
+            <button className="cta-button">Start for Free</button>
+          </footer>
+        </>
       ) : (
         <ProfessionPage />
       )}

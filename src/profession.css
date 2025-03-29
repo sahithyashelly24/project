@@ -1,0 +1,247 @@
+/* Background Video Styling */
+.profession-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Wrapper to ensure content stays readable */
+.profession-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Container Styling */
+.profession-container {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(20, 20, 20, 0.9); /* Dark theme background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+/* Moved Add Button to the Right */
+.profession-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profession-add-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.profession-add-btn:hover {
+    background-color: #218838;
+}
+
+/* Table Styling */
+.profession-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.1);
+}
+
+.profession-table th {
+    background-color: rgba(0, 123, 255, 0.8);
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.profession-table td {
+    padding: 12px;
+    border-bottom: 1px solid #555;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+}
+
+.profession-row:hover {
+    background-color: #444;
+}
+
+/* Profile Image */
+.profession-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profession-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.profession-profile img:hover {
+    transform: scale(1.1);
+}
+
+.profession-profile input {
+    display: none;
+}
+
+/* Input Fields - Underlined Style */
+.profession-input {
+    width: 90%;
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 2px solid #888;
+    background: transparent;
+    text-align: center;
+    color: white;
+    transition: border-color 0.3s ease;
+}
+
+.profession-input:focus {
+    border-color: rgba(0, 123, 255, 0.7);
+    outline: none;
+}
+
+/* Status Dropdown */
+.profession-status {
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: rgba(0, 123, 255, 0.2);
+    color: white;
+}
+
+/* Buttons */
+.profession-lock-btn {
+    font-size: 18px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    color: white;
+}
+
+.profession-lock-btn:hover {
+    transform: scale(1.1);
+}
+
+.profession-remove-btn {
+    font-size: 16px;
+    border: none;
+    background: none;
+    color: red;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.profession-remove-btn:hover {
+    color: darkred;
+}
+
+/* Profile Options Menu */
+.profile-menu {
+    position: absolute;
+    background: #222;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-option {
+    padding: 8px 12px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.profile-option:hover {
+    background: #333;
+}
+
+/* Profile Card Popup */
+.profile-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
+    color: white;
+}
+
+.profile-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-card-close {
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+}
+
+.profile-card-content {
+    display: flex;
+    align-items: center;
+}
+
+.profile-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.profile-audio-input {
+    margin-top: 15px;
+}
+
+.profile-submit-btn {
+    margin-top: 10px;
+    padding: 10px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.profile-submit-btn:hover {
+    background: darkgreen;
+}

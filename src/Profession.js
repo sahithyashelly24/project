@@ -1,84 +1,171 @@
+import React, { useState } from "react";
+import "./profession.css";
 
-import './App.css'; // Use the same CSS file or create a new one for profession page styles
-import React, { useState } from 'react';
+const dp = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+const videoBg = "https://videos.pexels.com/video-files/1918465/1918465-uhd_2560_1440_24fps.mp4"; // Replace with your video URL
 
-const ProfessionPage = () => {
-  const [profession, setProfession] = useState('');
+const Profession = () => {
+  const [sections, setSections] = useState([
+    { id: 1, client: "John Doe", issue: "Trauma & Abuse", status: "Completed", locked: false, profilePic: dp },
+    { id: 2, client: "Jane Smith", issue: "Identity & Self-Esteem", status: "Upcoming", locked: false, profilePic: dp },
+    { id: 3, client: "David Lee", issue: "Financial Anxiety", status: "Cancelled", locked: false, profilePic: dp },
+    { id: 4, client: "Emily Clark", issue: "End-of-Life Planning", status: "In Progress", locked: false, profilePic: dp },
+  ]);
 
-  const handleProfessionChange = (e) => {
-    setProfession(e.target.value);
+  const [selectedProfile, setSelectedProfile] = useState(null);
+
+  const statusOptions = ["Completed", "In Progress", "Cancelled", "Upcoming"];
+
+  const addClient = () => {
+    setSections([
+      ...sections,
+      { id: Date.now(), client: "", issue: "", status: "Upcoming", locked: false, profilePic: dp },
+    ]);
   };
 
-  const handleSubmit = () => {
-    console.log("Selected Profession:", profession);
+  const removeClient = (id) => {
+    setSections(sections.filter((section) => section.id !== id));
+  };
+
+  const updateField = (id, field, value) => {
+    setSections(
+      sections.map((section) => (section.id === id ? { ...section, [field]: value } : section))
+    );
+  };
+
+  const updateProfilePic = (id, file) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setSections(
+        sections.map((section) =>
+          section.id === id ? { ...section, profilePic: reader.result } : section
+        )
+      );
+    };
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const toggleLock = (id) => {
+    setSections(
+      sections.map((section) => (section.id === id ? { ...section, locked: !section.locked } : section))
+    );
   };
 
   return (
-    <div className="container">
-    <video autoPlay muted loop className="video-background">
-      <source
-        src="https://videos.pexels.com/video-files/1918465/1918465-uhd_2560_1440_24fps.mp4"
-        type="video/mp4"
-      />
-      Your browser does not support the video tag.
-    </video>
-    <div className="overlay">
-    <div className="main-container">
-      <div className="form-container">
-        <div className="back-button">
-          <button>&#8592;</button>
+    <div className="profession-wrapper">
+      <video autoPlay loop muted className="profession-video">
+        <source src={videoBg} type="video/mp4" />
+      </video>
+
+      <div className="profession-container">
+        <div className="profession-header">
+          <h2>Projects Overview</h2>
+          <button className="profession-add-btn" onClick={addClient}>
+            + Add Client
+          </button>
         </div>
-        <div className="card">
-        <div className="form-content">
-          <label className="label"><h2>We would love to know more about You ! </h2>
-            <br></br>Sharing your work and responsibilities helps us tailor content and recommendations to better<br></br> support your personal and professional growth. We're excited to learn about your journey .</label>
-          <br></br>
-          <select className="select" value={profession} onChange={handleProfessionChange}>
-            <option value="">Student</option>
-            <option value="interview">interview prep</option>
-            <option value="Seminor/Speach">Seminor/Speach</option>
-            <option value="publicspeaking">Public speaking</option>
-            <option value="generalpurpose">General Purpose</option>
-          </select>
-          <select className="select" value={profession} onChange={handleProfessionChange}>
-            <option value="">Working Professional</option>
-            <option value="TechnicalSpeech">Technical Speech</option>
-            <option value="Seminor/Speach">Seminor/Speech</option>
-            <option value="publicspeaking">Public speaking</option>
-            <option value="generalpurpose">General Purpose</option>
-          </select>
-          <select className="select" value={profession} onChange={handleProfessionChange}>
-            <option value="">Physciatrist</option>
-            <option value="Patient">Patient examination</option>
-            <option value="Seminor/Speach">Technical Seminor</option>
-            <option value="publicspeaking">Public speaking</option>
-            <option value="generalpurpose">General Purpose</option>
-          </select>
-          <select className="select" value={profession} onChange={handleProfessionChange}>
-            <option value="">General Purpose</option>
-          </select>
-          <button className="start-button" onClick={handleSubmit}>Start</button>
-        </div>
-        </div>
+        <table className="profession-table">
+          <thead>
+            <tr>
+              <th>Profile</th>
+              <th>Client Name</th>
+              <th>Service/Issue</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sections.map((section) => (
+              <tr key={section.id} className="profession-row">
+                <td className="profession-profile">
+                  <div className="profile-hover-wrapper">
+                    <img src={section.profilePic} alt="Profile" className="profile-img" />
+                    <div className="profile-hover-options">
+                      <button onClick={() => document.getElementById(`fileInput-${section.id}`).click()}>
+                        Change Profile Pic
+                      </button>
+                      <button onClick={() => setSelectedProfile(section)}>
+                        View Profile
+                      </button>
+                    </div>
+                    <input
+                      id={`fileInput-${section.id}`}
+                      type="file"
+                      accept="image/*"
+                      style={{ display: "none" }}
+                      onChange={(e) => updateProfilePic(section.id, e.target.files[0])}
+                    />
+                  </div>
+                </td>
+                <td>
+                  <input
+                    className="profession-input"
+                    type="text"
+                    value={section.client}
+                    onChange={(e) => updateField(section.id, "client", e.target.value)}
+                    disabled={section.locked}
+                  />
+                </td>
+                <td>
+                  <input
+                    className="profession-input"
+                    type="text"
+                    value={section.issue}
+                    onChange={(e) => updateField(section.id, "issue", e.target.value)}
+                    disabled={section.locked}
+                  />
+                </td>
+                <td>
+                  <select
+                    className="profession-status"
+                    value={section.status}
+                    onChange={(e) => updateField(section.id, "status", e.target.value)}
+                    disabled={section.locked}
+                  >
+                    {statusOptions.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </td>
+                <td>
+                  <button className="profession-lock-btn" onClick={() => toggleLock(section.id)}>
+                    {section.locked ? "🔒" : "🔓"}
+                  </button>
+                  <button className="profession-remove-btn" onClick={() => removeClient(section.id)}>
+                    ✖
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      <div className="image-section">
-      <div className="top-right">
-        <h2>Communicate to Conquer</h2>
-      </div>
-        <br></br>
-        <br></br><br></br><br></br><br></br>
-        <br></br><br></br><br></br><br></br><br></br>
-        <div className="image-grid">
-          <img src="https://images.pexels.com/photos/6914648/pexels-photo-6914648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Option 1" className="image" />
-          <img src="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Option 2" className="image" />
-          <img src="https://images.pexels.com/photos/7579367/pexels-photo-7579367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Option 3" className="image" />
-          <img src="https://images.pexels.com/photos/210661/pexels-photo-210661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Option 4" className="image" />
+
+      {selectedProfile && (
+        <div className="profile-overlay">
+          <div className="profile-card">
+            <button className="profile-close-btn" onClick={() => setSelectedProfile(null)}>✖</button>
+            <div className="profile-content">
+              <img src={selectedProfile.profilePic} alt="Profile" className="profile-image" />
+              <div className="profile-details">
+                <h2>{selectedProfile.client}</h2>
+                <p><strong>Service:</strong> {selectedProfile.issue}</p>
+                <p><strong>Status:</strong> {selectedProfile.status}</p>
+              </div>
+            </div>
+            <div className="profile-audio-section">
+              <input type="file" accept="audio/*" className="profile-audio-input" />
+              <button className="profile-submit-btn">Submit Audio</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    </div>
+      )}
     </div>
   );
 };
 
-export default ProfessionPage;
+export default Profession;
