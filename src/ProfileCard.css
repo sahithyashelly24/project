@@ -1,61 +1,94 @@
-.profile-container {
-    width:px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  
+ .profile-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 80vw;
+    height: 100vh;
+    margin: auto;
+    background-color: white; /* Keeps the main background white */
+  }
+  
+  .profile-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #262424; /* Set only card background to black */
+    border-radius: 10px;
     padding: 20px;
-    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    color: white; /* Ensures all text inside cards is white */
+  }
+  
+  .profile-content h2,
+  .profile-content h3,
+  .profile-content p {
+    color: white; /* Text inside the cards is white */
+  }
+  
+  .show-details-btn,
+  .profile-submit-btn {
+    background-color: #4CAF50; /* Green button for contrast */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .show-details-btn:hover,
+  .profile-submit-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  
+  /* Left Section - Profile Image */
+  .profile-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .profile-image {
-    width: 100px;
-    height: 100px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    object-fit: cover;
+  }
+  
+  /* Right Section - Profile Details */
+  .profile-details {
+    flex: 2;
+    padding: 20px;
+  }
+  
+  .profile-details h2 {
     margin-bottom: 10px;
-  }
-  
-  .profile-container h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-  
-  .profile-container p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 8px;
   }
   
   .profile-audio-section {
     margin-top: 15px;
   }
   
-  .profile-audio-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    margin-bottom: 10px;
-  }
-  
   .audio-player {
     width: 100%;
-    margin-top: 5px;
-  }
-  
-  .profile-submit-btn {
-    background: #3D6687;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
     margin-top: 10px;
-    transition: background 0.3s ease;
   }
   
-  .profile-submit-btn:hover {
-    background: #61AFF6;
+  
+  /* Transcript Box */
+  .transcript-box {
+    background: #262424;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+  
+  /* Emotion Chart */
+  .emotion-chart-section {
+    margin-top: 20px;
   }
   
