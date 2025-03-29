@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
-import "./profession.css";
+import "./ProfileCard.css";
 
 const dp = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
 
