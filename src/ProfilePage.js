@@ -67,7 +67,7 @@ const ProfilePage = () => {
         </div>
         {transcript && (
           <div className="ctranscript-box">
-            <h3>Transcript:</h3>
+            <h2>Transcript:</h2>
             <p>{transcript}</p>
           </div>
         )}
