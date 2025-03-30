@@ -19,7 +19,6 @@ const ProfilePage = () => {
   const profile = profiles.find((p) => p.id.toString() === id);
   const [audioFile, setAudioFile] = useState(null);
   const [transcript, setTranscript] = useState("");
-  const [showTranscript, setShowTranscript] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [emotions, setEmotions] = useState([]);
 
@@ -31,7 +30,6 @@ const ProfilePage = () => {
     const file = event.target.files[0];
     if (file) {
       setAudioFile(URL.createObjectURL(file));
-      setShowTranscript(true);
 
       // Simulated backend response
       setTimeout(() => {
@@ -48,9 +46,9 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="profile-container" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", gap: "20px", height: "100vh", width: "80vw", margin: "auto" }}>
-      {/* Left Up - Profile Info */}
-      <div className="profile-content" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+    <div className="grid-container">
+      {/* Top Section - Profile Card */}
+      <div className="cprofile-card">
         <div className="profile-image-container">
           <img src={profile.profilePic} alt="Profile" className="profile-image" />
         </div>
@@ -61,42 +59,35 @@ const ProfilePage = () => {
         </div>
       </div>
 
-      {/* Right Up - Audio Upload & Playback */}
-      <div className="profile-content" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+      {/* Bottom Left - Audio Upload & Transcript */}
+      <div className="audio-transcript-card">
         <div className="profile-audio-section">
           <input type="file" accept="audio/*" onChange={handleFileUpload} />
           {audioFile && <audio controls src={audioFile} className="audio-player"></audio>}
-          <button className="profile-submit-btn">Submit Audio</button>
         </div>
-      </div>
-
-      {/* Left Down - Transcript Card */}
-      {showTranscript && (
-        <div className="profile-content" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <div className="transcript-box">
+        {transcript && (
+          <div className="ctranscript-box">
             <h3>Transcript:</h3>
             <p>{transcript}</p>
           </div>
-          <button className="show-details-btn" onClick={() => setShowDetails(true)}>Show Details</button>
-        </div>
-      )}
+        )}
+        {transcript && <button className="show-details-btn" onClick={() => setShowDetails(true)}>Show Details</button>}
+      </div>
 
-      {/* Right Down - Emotion Analysis Card */}
+      {/* Bottom Right - Emotion Analysis */}
       {showDetails && (
-        <div className="profile-content" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <div className="emotion-chart-section">
-            <h3>Emotion Analysis</h3>
-            <PieChart width={300} height={300}>
-              <Pie data={emotions} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" dataKey="value">
-                {emotions.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip />
-              <Legend />
-            </PieChart>
-            <h4>Recommended Sessions: {Math.ceil(emotions.reduce((sum, e) => sum + e.value, 0) / 20)}</h4>
-          </div>
+        <div className="emotion-analysis-card">
+          <h3>Emotion Analysis</h3>
+          <PieChart width={300} height={300}>
+            <Pie data={emotions} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" dataKey="value">
+              {emotions.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+            <Legend />
+          </PieChart>
+          <h4>Recommended Sessions: {Math.ceil(emotions.reduce((sum, e) => sum + e.value, 0) / 20)}</h4>
         </div>
       )}
     </div>
