@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useNavigate, Link } from "react-router-dom";
 import "./App.css";
 import ProfessionPage from "./Profession";
 import ProfilePage from "./ProfilePage";
+import Authu from "./Authu";
 
-const Home = ({ onStart }) => {
+const Home = ({ onStart, user }) => {
   const [name, setName] = useState("");
   const [showNewCard, setShowNewCard] = useState(false);
 
@@ -24,6 +25,12 @@ const Home = ({ onStart }) => {
 
   return (
     <div className="container">
+      {/* Navigation Bar */}
+      <nav className="navbar">
+        <h1>Cognitive Vox</h1>
+        <Link to="/profile">{user ? user.username : "Profile"}</Link>
+      </nav>
+      
       <div className="headline-section">
         <div className="background-video">
           <video autoPlay muted loop playsInline>
@@ -37,15 +44,9 @@ const Home = ({ onStart }) => {
         </header>
         <div className="card">
           <h2>What name feels right for you?</h2>
-          <input
-            type="text"
-            placeholder="Enter your name to start ..."
-            value={name}
-            onChange={handleInputChange}
-          />
+          <input type="text" placeholder="Enter your name to start ..." value={name} onChange={handleInputChange} />
           <button onClick={handleSubmit}>→</button>
         </div>
-
         {showNewCard && (
           <div className="new-card">
             <button className="close-button" onClick={handleCloseCard}>×</button>
@@ -55,7 +56,6 @@ const Home = ({ onStart }) => {
           </div>
         )}
       </div>
-
       {/* Additional Sections */}
       <section className="features">
         <h2>Why Choose Us?</h2>
@@ -74,7 +74,6 @@ const Home = ({ onStart }) => {
           </div>
         </div>
       </section>
-
       <section className="trust">
         <h2>Trusted by Thousands</h2>
         <div className="testimonials">
@@ -92,7 +91,6 @@ const Home = ({ onStart }) => {
           </div>
         </div>
       </section>
-
       <footer className="cta">
         <button className="cta-button">Start for Free</button>
       </footer>
@@ -102,11 +100,13 @@ const Home = ({ onStart }) => {
 
 const App = () => {
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
 
   return (
     <Routes>
-      <Route path="/" element={<Home onStart={() => navigate("/profession")} />} />
+      <Route path="/" element={<Home onStart={() => navigate("/profession")} user={user} />} />
       <Route path="/profession" element={<ProfessionPage />} />
+      <Route path="/profile" element={<Authu setUser={setUser} />} />
       <Route path="/profile/:id" element={<ProfilePage />} />
     </Routes>
   );
