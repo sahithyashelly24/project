@@ -59,7 +59,7 @@ const Home = ({ onStart, user }) => {
         )}
       </div>
       <section className="features">
-        <h2>Why Choose Us?</h2>
+        <h2 >Why Choose Us?</h2>
         <div className="feature-grid">
           <div className="feature-card">
             <h3>AI-Powered</h3>
