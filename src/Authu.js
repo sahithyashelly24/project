@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./authu.css";
 
 const generateCaptcha = () => {
   return Math.random().toString(36).substring(2, 8).toUpperCase();
@@ -73,92 +74,88 @@ const Authu = ({ setUser }) => {
   };
 
   return (
-    <div className="flex flex-col items-center mt-10">
-      <h2 className="text-2xl font-bold">{isForgotPassword ? "Forgot Password" : isLogin ? "Login" : "Sign Up"}</h2>
-      {error && <p className="text-red-500">{error}</p>}
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4">
-        {(!isLogin || isForgotPassword) && (
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={formData.username}
-            onChange={handleChange}
-            className="border p-2"
-            required
-          />
-        )}
-        {!isForgotPassword && (
-          <input
-            type="text"
-            name="email"
-            placeholder="Email or Username"
-            value={formData.email}
-            onChange={handleChange}
-            className="border p-2"
-            required
-          />
-        )}
-        {!isForgotPassword && (
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-            className="border p-2"
-            required
-          />
-        )}
-        {isForgotPassword && !showPasswordFields && (
-          <>
-            <div className="flex items-center gap-2">
-              <span className="border p-2 bg-gray-200 font-bold">{captcha}</span>
-              <button type="button" onClick={() => setCaptcha(generateCaptcha())} className="text-blue-500">Refresh</button>
-            </div>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2 className="auth-title">{isForgotPassword ? "Forgot Password" : isLogin ? "Login" : "Sign Up"}</h2>
+        {error && <p className="auth-error">{error}</p>}
+        <form onSubmit={handleSubmit} className="auth-form">
+          {(!isLogin || isForgotPassword) && (
             <input
               type="text"
-              placeholder="Enter CAPTCHA"
-              value={captchaInput}
-              onChange={(e) => setCaptchaInput(e.target.value)}
-              className="border p-2"
+              name="username"
+              placeholder="Username"
+              value={formData.username}
+              onChange={handleChange}
               required
             />
-          </>
-        )}
-        {showPasswordFields && (
-          <>
+          )}
+          {!isForgotPassword && (
+            <input
+              type="text"
+              name="email"
+              placeholder="Email or Username"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          )}
+          {!isForgotPassword && (
             <input
               type="password"
-              placeholder="New Password"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-              className="border p-2"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
               required
             />
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              className="border p-2"
-              required
-            />
-            <button onClick={handlePasswordReset} className="bg-blue-500 text-white px-4 py-2">Submit</button>
-          </>
-        )}
-        {!showPasswordFields && (
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2">
-            {isForgotPassword ? "Reset Password" : isLogin ? "Login" : "Sign Up"}
-          </button>
-        )}
-      </form>
-      <button onClick={() => { setIsLogin(!isLogin); setIsForgotPassword(false); }} className="mt-4 text-blue-500">
-        {isLogin ? "Don't have an account? Sign Up" : "Already have an account? Login"}
-      </button>
-      <button onClick={() => { setIsForgotPassword(!isForgotPassword); setIsLogin(false); }} className="mt-2 text-blue-500">
-        {isForgotPassword ? "Back to Login" : "Forgot Password?"}
-      </button>
+          )}
+          {isForgotPassword && !showPasswordFields && (
+            <>
+              <div className="captcha-container">
+                <span className="captcha-text">{captcha}</span>
+                <button type="button" onClick={() => setCaptcha(generateCaptcha())} className="captcha-refresh">Refresh</button>
+              </div>
+              <input
+                type="text"
+                placeholder="Enter CAPTCHA"
+                value={captchaInput}
+                onChange={(e) => setCaptchaInput(e.target.value)}
+                required
+              />
+            </>
+          )}
+          {showPasswordFields && (
+            <>
+              <input
+                type="password"
+                placeholder="New Password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                required
+              />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+              <button onClick={handlePasswordReset} className="auth-button">Submit</button>
+            </>
+          )}
+          {!showPasswordFields && (
+            <button type="submit" className="auth-button">
+              {isForgotPassword ? "Reset Password" : isLogin ? "Login" : "Sign Up"}
+            </button>
+          )}
+        </form>
+        <button onClick={() => { setIsLogin(!isLogin); setIsForgotPassword(false); }} className="auth-switch">
+          {isLogin ? "Don't have an account? Sign Up" : "Already have an account? Login"}
+        </button>
+        <button onClick={() => { setIsForgotPassword(!isForgotPassword); setIsLogin(false); }} className="auth-forgot">
+          {isForgotPassword ? "Back to Login" : "Forgot Password?"}
+        </button>
+      </div>
     </div>
   );
 };
