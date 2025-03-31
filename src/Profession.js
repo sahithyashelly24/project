@@ -103,7 +103,7 @@ const Profession = () => {
                       <button onClick={() => document.getElementById(`fileInput-${section._id}`).click()}>
                         Change Profile Pic
                       </button>
-                      <button onClick={() => setSelectedProfile(section)}>
+                      <button onClick={() => window.location.href = `/profile/${section.id}`}>
                         View Profile
                       </button>
                     </div>
