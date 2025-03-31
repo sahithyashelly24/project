@@ -1,9 +1,11 @@
 
   .auth-container {
     display: flex;
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     height: 100%;
+    text-align: center;
   }
   
   .auth-card {
@@ -13,6 +15,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 350px;
+    margin-top: 20px;
   }
   
   .auth-title {
@@ -27,7 +30,7 @@
   }
   
   .auth-form input {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -92,26 +95,30 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     padding: 10px 20px;
     background-color: #2f2d2d;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
   
   .nav-left {
-    font-size: 18px;
+    font-size: 20px;
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding:30px ;
   }
   
   .nav-center {
     font-size: 24px;
     font-weight: bold;
     color: white;
+    justify-content: center;
+    padding-right: 20px;
   }
   
   .nav-right {
-    font-size: 18px;
+    font-size: 20px;
     color: white;
     text-decoration: none;
     font-weight: bold;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import "./authu.css";
 
 const generateCaptcha = () => {
@@ -75,6 +75,10 @@ const Authu = ({ setUser }) => {
 
   return (
     <div className="auth-container">
+      <nav className="navbar">
+        <Link to="/" className="nav-left">Home</Link>
+        <h1 className="nav-center">Cognitive Vox</h1>
+      </nav>
       <div className="auth-card">
         <h2 className="auth-title">{isForgotPassword ? "Forgot Password" : isLogin ? "Login" : "Sign Up"}</h2>
         {error && <p className="auth-error">{error}</p>}
