@@ -1,3 +1,4 @@
+import os
 import torch
 import torchaudio
 import torchaudio.transforms as transforms
@@ -6,6 +7,14 @@ import matplotlib.pyplot as plt
 import whisper
 import io
 import base64
+import imageio_ffmpeg as ffmpeg
+
+# Explicitly set FFmpeg path
+os.environ["PATH"] += os.pathsep + r"C:\ffmpeg\bin"
+
+# Set FFmpeg path from imageio_ffmpeg
+ffmpeg_path = ffmpeg.get_ffmpeg_exe()
+os.environ["PATH"] += os.pathsep + os.path.dirname(ffmpeg_path)
 
 def audio_to_spectrogram(audio_path):
     waveform, sample_rate = torchaudio.load(audio_path)
@@ -31,13 +40,15 @@ def display_spectrogram(spectrogram, sample_rate):
     return img_base64  # Return the image as a Base64 string
 
 def transcribe_audio(audio_path):
+    if not os.path.exists(audio_path):
+        raise FileNotFoundError(f"File not found: {audio_path}")
+    
     model = whisper.load_model("base")
     result = model.transcribe(audio_path)
     return result["text"]
 
-def processi__the_audio(audio_path):
+def processi_the_audio(audio_path):
     spectrogram, sr = audio_to_spectrogram(audio_path)
-    img_base64 = display_spectrogram(spectrogram, sr)  # Get Base64 image
     transcript = transcribe_audio(audio_path)
     
-    return {"spectrogram": img_base64, "transcript": transcript}
+    return {"transcript": transcript}

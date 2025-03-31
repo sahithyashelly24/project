@@ -1,32 +1,49 @@
 from fastapi import FastAPI, UploadFile, File
 import os
-from processing_audio import processi__the_audio
+from processing_audio import processi_the_audio
 
 app = FastAPI()
 
-UPLOAD_FOLDER = os.path.abspath("uploads")  # Use absolute path
+UPLOAD_FOLDER = os.path.abspath("uploads")  # Absolute path
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # Ensure folder exists
 
 @app.post("/upload_audio")
 async def upload_audio(file: UploadFile = File(...)):
-    file_path = os.path.join(UPLOAD_FOLDER, file.filename)  # Full path
+    # Sanitize filename
+    safe_filename = file.filename.replace(" ", "_")
 
-    # Debugging: Print where the file is being saved
-    print(f"Saving file to: {file_path}")
+    # Correct file path format
+    file_path_x = os.path.join(UPLOAD_FOLDER, safe_filename).replace("\\", "/")  
 
-    try:
-        # Save the uploaded file
-        with open(file_path, "wb") as f:
-            f.write(await file.read())
+    print(f"Saving file to: {file_path_x}")  # Debugging
 
-        # Check if the file actually exists
-        if not os.path.exists(file_path):
-            return {"error": "File was not saved correctly!"}
+    with open(file_path_x, "wb") as f:
+        f.write(await file.read())
+
+        # Verify file exists
+    if not os.path.exists(file_path_x):
+        return {"error": "File was not saved correctly!"}
+
+    print(f"File saved successfully at {file_path_x}")
 
         # Process the saved file
-        result = processi__the_audio(file_path)
+    result = processi_the_audio(file_path_x)
+    return {"transcription": result}
 
+    '''try:
+        # Save the uploaded file
+        with open(file_path_x, "wb") as f:
+            f.write(await file.read())
+
+        # Verify file exists
+        if not os.path.exists(file_path_x):
+            return {"error": "File was not saved correctly!"}
+
+        print(f"File saved successfully at {file_path_x}")
+
+        # Process the saved file
+        result = processi_the_audio(file_path_x)
         return {"transcription": result}
 
     except Exception as e:
-        return {"error": str(e)}
+        return {"error": str(e)}'''

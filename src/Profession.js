@@ -1,56 +1,73 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./profession.css";
 
 const dp = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
 const videoBg = "https://videos.pexels.com/video-files/1918465/1918465-uhd_2560_1440_24fps.mp4"; // Replace with your video URL
 
 const Profession = () => {
-  const [sections, setSections] = useState([
-    { id: 1, client: "John Doe", issue: "Trauma & Abuse", status: "Completed", locked: false, profilePic: dp },
-    { id: 2, client: "Jane Smith", issue: "Identity & Self-Esteem", status: "Upcoming", locked: false, profilePic: dp },
-    { id: 3, client: "David Lee", issue: "Financial Anxiety", status: "Cancelled", locked: false, profilePic: dp },
-    { id: 4, client: "Emily Clark", issue: "End-of-Life Planning", status: "In Progress", locked: false, profilePic: dp },
-  ]);
-
+  const [sections, setSections] = useState([]);
   const [selectedProfile, setSelectedProfile] = useState(null);
-
   const statusOptions = ["Completed", "In Progress", "Cancelled", "Upcoming"];
 
+  // Fetch clients from the database
+  useEffect(() => {
+    axios.get("http://localhost:5000/api/clients")
+      .then(response => setSections(response.data))
+      .catch(error => console.error("Error fetching clients:", error));
+  }, []);
+
+  // Add a new client
   const addClient = () => {
-    setSections([
-      ...sections,
-      { id: Date.now(), client: "", issue: "", status: "Upcoming", locked: false, profilePic: dp },
-    ]);
+    const newClient = {
+      client: "client name",
+      issue: "what is the issue",
+      status: "Upcoming",
+      locked: false,
+      profilePic: dp
+    };
+
+    axios.post("http://localhost:5000/api/clients", newClient)
+      .then(response => setSections([...sections, response.data]))
+      .catch(error => console.error("Error adding client:", error));
   };
 
+  // Remove a client
   const removeClient = (id) => {
-    setSections(sections.filter((section) => section.id !== id));
+    axios.delete(`http://localhost:5000/api/clients/${id}`)
+      .then(() => setSections(sections.filter(section => section._id !== id)))
+      .catch(error => console.error("Error deleting client:", error));
   };
 
+  // Update a field
   const updateField = (id, field, value) => {
-    setSections(
-      sections.map((section) => (section.id === id ? { ...section, [field]: value } : section))
-    );
+    setSections(sections.map(section => 
+      section._id === id ? { ...section, [field]: value } : section
+    ));
+  
+    axios.put(`http://localhost:5000/api/clients/${id}`, { [field]: value })
+      .catch(error => console.error("Error updating client:", error));
   };
 
+  // Update profile picture
   const updateProfilePic = (id, file) => {
     const reader = new FileReader();
     reader.onloadend = () => {
-      setSections(
-        sections.map((section) =>
-          section.id === id ? { ...section, profilePic: reader.result } : section
-        )
+      const updatedSections = sections.map(section =>
+        section._id === id ? { ...section, profilePic: reader.result } : section
       );
+      setSections(updatedSections);
     };
     if (file) {
       reader.readAsDataURL(file);
     }
   };
 
+  // Toggle lock
   const toggleLock = (id) => {
-    setSections(
-      sections.map((section) => (section.id === id ? { ...section, locked: !section.locked } : section))
-    );
+    setSections(sections.map(section => 
+      section._id === id ? { ...section, locked: !section.locked } : section
+    ));
   };
 
   return (
@@ -78,12 +95,12 @@ const Profession = () => {
           </thead>
           <tbody>
             {sections.map((section) => (
-              <tr key={section.id} className="profession-row">
+              <tr key={section._id} className="profession-row">
                 <td className="profession-profile">
                   <div className="profile-hover-wrapper">
                     <img src={section.profilePic} alt="Profile" className="profile-img" />
                     <div className="profile-hover-options">
-                      <button onClick={() => document.getElementById(`fileInput-${section.id}`).click()}>
+                      <button onClick={() => document.getElementById(`fileInput-${section._id}`).click()}>
                         Change Profile Pic
                       </button>
                       <button onClick={() => setSelectedProfile(section)}>
@@ -91,11 +108,11 @@ const Profession = () => {
                       </button>
                     </div>
                     <input
-                      id={`fileInput-${section.id}`}
+                      id={`fileInput-${section._id}`}
                       type="file"
                       accept="image/*"
                       style={{ display: "none" }}
-                      onChange={(e) => updateProfilePic(section.id, e.target.files[0])}
+                      onChange={(e) => updateProfilePic(section._id, e.target.files[0])}
                     />
                   </div>
                 </td>
@@ -104,7 +121,7 @@ const Profession = () => {
                     className="profession-input"
                     type="text"
                     value={section.client}
-                    onChange={(e) => updateField(section.id, "client", e.target.value)}
+                    onChange={(e) => updateField(section._id, "client", e.target.value)}
                     disabled={section.locked}
                   />
                 </td>
@@ -113,7 +130,7 @@ const Profession = () => {
                     className="profession-input"
                     type="text"
                     value={section.issue}
-                    onChange={(e) => updateField(section.id, "issue", e.target.value)}
+                    onChange={(e) => updateField(section._id, "issue", e.target.value)}
                     disabled={section.locked}
                   />
                 </td>
@@ -121,7 +138,7 @@ const Profession = () => {
                   <select
                     className="profession-status"
                     value={section.status}
-                    onChange={(e) => updateField(section.id, "status", e.target.value)}
+                    onChange={(e) => updateField(section._id, "status", e.target.value)}
                     disabled={section.locked}
                   >
                     {statusOptions.map((option) => (
@@ -132,10 +149,10 @@ const Profession = () => {
                   </select>
                 </td>
                 <td>
-                  <button className="profession-lock-btn" onClick={() => toggleLock(section.id)}>
+                  <button className="profession-lock-btn" onClick={() => toggleLock(section._id)}>
                     {section.locked ? "🔒" : "🔓"}
                   </button>
-                  <button className="profession-remove-btn" onClick={() => removeClient(section.id)}>
+                  <button className="profession-remove-btn" onClick={() => removeClient(section._id)}>
                     ✖
                   </button>
                 </td>
