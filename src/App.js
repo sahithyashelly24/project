@@ -27,9 +27,11 @@ const Home = ({ onStart, user }) => {
     <div className="container">
       {/* Navigation Bar */}
       <nav className="navbar">
-        <h1>Cognitive Vox</h1>
-        <Link to="/profile">{user ? user.username : "Profile"}</Link>
+        <Link to="/" className="nav-left">Home</Link>
+        <h1 className="nav-center">Cognitive Vox</h1>
+        <Link to="/profile" className="nav-right">{user ? user.username : "Profile"}</Link>
       </nav>
+
       
       <div className="headline-section">
         <div className="background-video">
@@ -56,7 +58,6 @@ const Home = ({ onStart, user }) => {
           </div>
         )}
       </div>
-      {/* Additional Sections */}
       <section className="features">
         <h2>Why Choose Us?</h2>
         <div className="feature-grid">
@@ -74,6 +75,7 @@ const Home = ({ onStart, user }) => {
           </div>
         </div>
       </section>
+
       <section className="trust">
         <h2>Trusted by Thousands</h2>
         <div className="testimonials">
@@ -91,6 +93,7 @@ const Home = ({ onStart, user }) => {
           </div>
         </div>
       </section>
+
       <footer className="cta">
         <button className="cta-button">Start for Free</button>
       </footer>
