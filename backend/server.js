@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 require("dotenv").config(); // Load environment variables
+=======
+require("dotenv").config(); // Load environment variables at the very top
+>>>>>>> 628301c (login-done-no css)
 
 const express = require("express");
 const multer = require("multer");
