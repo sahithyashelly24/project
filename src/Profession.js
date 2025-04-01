@@ -3,7 +3,6 @@ import axios from "axios";
 import "./profession.css";
 import { useNavigate } from "react-router-dom";
 
-
 const dp = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
 const videoBg = "https://videos.pexels.com/video-files/1918465/1918465-uhd_2560_1440_24fps.mp4"; // Replace with your video URL
 
@@ -43,10 +42,10 @@ const Profession = () => {
 
   // Update a field
   const updateField = (id, field, value) => {
-    setSections(sections.map(section => 
+    setSections(sections.map(section =>
       section._id === id ? { ...section, [field]: value } : section
     ));
-  
+
     axios.put(`http://localhost:5000/api/clients/${id}`, { [field]: value })
       .catch(error => console.error("Error updating client:", error));
   };
@@ -73,7 +72,7 @@ const Profession = () => {
 
   // Toggle lock
   const toggleLock = (id) => {
-    setSections(sections.map(section => 
+    setSections(sections.map(section =>
       section._id === id ? { ...section, locked: !section.locked } : section
     ));
   };
@@ -106,10 +105,10 @@ const Profession = () => {
               <tr key={section._id} className="profession-row">
                 <td className="profession-profile">
                   <div className="profile-hover-wrapper">
-                  <img 
-                      src={`http://localhost:5000${section.profilePic}`} // Ensure the full URL is used
-                      alt="Profile" 
-                      className="profile-img" 
+                    <img
+                      src={`http://localhost:5000${section.profilePic}` || dp} // Ensure the full URL is used
+                      alt="Profile"
+                      className="profile-img"
                     />
                     <div className="profile-hover-options">
                       <button onClick={() => document.getElementById(`fileInput-${section._id}`).click()}>

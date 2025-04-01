@@ -46,6 +46,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // Add new client with default profile pic
+
 app.post("/api/clients", async (req, res) => {
   try {
     const newClient = {
@@ -56,8 +57,13 @@ app.post("/api/clients", async (req, res) => {
       profilePic: DEFAULT_PROFILE_PIC, // Use default online image
     };
 
+    // Insert the new client
     const result = await collection.insertOne(newClient);
-    res.json(result.ops[0]);
+    
+    // The `insertedId` field contains the ID of the newly inserted document
+    const insertedClient = { ...newClient, _id: result.insertedId };
+
+    res.json(insertedClient); // Send the new client with the inserted ID
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -104,7 +110,7 @@ app.get("/api/clients/:id", async (req, res) => {
 app.post("/api/clients/upload/:id", upload.single("profilePic"), async (req, res) => {
   try {
     const { id } = req.params;
-    const profilePic = req.file ? `/uploads/${req.file.filename}` : DEFAULT_PROFILE_PIC; // Use default if no file uploaded
+    const profilePic = req.file ? `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}` : DEFAULT_PROFILE_PIC; // Use default if no file uploaded
 
     if (!ObjectId.isValid(id)) {
       return res.status(400).json({ error: "Invalid ID format" });
@@ -120,6 +126,51 @@ app.post("/api/clients/upload/:id", upload.single("profilePic"), async (req, res
     } else {
       res.status(404).json({ error: "Client not found" });
     }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Update client details (PATCH or PUT)
+app.put("/api/clients/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedData = req.body;
+
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ error: "Invalid ID format" });
+    }
+
+    const result = await collection.updateOne(
+      { _id: new ObjectId(id) },
+      { $set: updatedData }
+    );
+
+    if (result.modifiedCount > 0) {
+      res.json({ message: "Client updated successfully", updatedData });
+    } else {
+      res.status(404).json({ error: "Client not found or no changes made" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Delete a client
+app.delete("/api/clients/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ error: "Invalid ID format" });
+    }
+
+    const result = await collection.deleteOne({ _id: new ObjectId(id) });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ message: "Client not found" });
+    }
+
+    res.json({ message: "Client deleted successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

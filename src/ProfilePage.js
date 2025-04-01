@@ -1,47 +1,71 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 import "./ProfileCard.css";
-
 
 const COLORS = ["#FF6384", "#36A2EB", "#FFCE56", "#4CAF50", "#9966FF"];
 
 const ProfilePage = () => {
   const { id } = useParams();
   const [profile, setProfile] = useState(null);
-
-  useEffect(() => {
-    axios.get(`http://localhost:5000/api/clients/${id}`)
-      .then(response => setProfile(response.data))
-      .catch(error => console.error("Error fetching client:", error));
-  }, [id]);
   const [audioFile, setAudioFile] = useState(null);
   const [transcript, setTranscript] = useState("");
   const [showDetails, setShowDetails] = useState(false);
   const [emotions, setEmotions] = useState([]);
 
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/api/clients/${id}`)
+      .then((response) => setProfile(response.data))
+      .catch((error) => console.error("Error fetching client:", error));
+  }, [id]);
+
   if (!profile) {
-    console.log("Client ID:", id)
+    console.log("Client ID:", id);
     return <h2>Loading!...</h2>;
   }
 
-  const handleFileUpload = (event) => {
+  // Handle file selection (trigger upload)
+  const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setAudioFile(URL.createObjectURL(file));
+      setAudioFile(file); // Store the file in state for later upload
+    }
+  };
 
-      // Simulated backend response
-      setTimeout(() => {
-        setTranscript("This is a sample transcript of the uploaded audio.");
-        setEmotions([
-          { name: "Happy", value: 35 },
-          { name: "Sad", value: 25 },
-          { name: "Angry", value: 15 },
-          { name: "Fearful", value: 15 },
-          { name: "Neutral", value: 10 },
-        ]);
-      }, 2000);
+  // Handle file upload and send to FastAPI backend for transcription
+  const handleFileUpload = async () => {
+    if (!audioFile) {
+      alert("Please select an audio file first.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", audioFile);
+
+    try {
+      // Send the file to FastAPI for processing
+      const response = await axios.post("http://localhost:8000/upload_audio", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      // Get the transcription from the backend response
+      setTranscript(response.data.transcription.transcript);
+
+      // Optionally handle emotions or other data
+      setEmotions([
+        { name: "Happy", value: 35 },
+        { name: "Sad", value: 25 },
+        { name: "Angry", value: 15 },
+        { name: "Fearful", value: 15 },
+        { name: "Neutral", value: 10 },
+      ]);
+    } catch (error) {
+      console.error("Error uploading audio:", error);
+      setTranscript("Error transcribing the audio.");
     }
   };
 
@@ -62,15 +86,18 @@ const ProfilePage = () => {
       {/* Bottom Left - Audio Upload & Transcript */}
       <div className="audio-transcript-card">
         <div className="profile-audio-section">
-          <input type="file" accept="audio/*" onChange={handleFileUpload} />
-          {audioFile && <audio controls src={audioFile} className="audio-player"></audio>}
+          <input type="file" accept="audio/*" onChange={handleFileChange} />
+          <button onClick={handleFileUpload}>Transcribe Audio</button>
+          {audioFile && <audio controls src={URL.createObjectURL(audioFile)} className="audio-player"></audio>}
         </div>
+
         {transcript && (
           <div className="ctranscript-box">
             <h4>Transcript:</h4>
             <p>{transcript}</p>
           </div>
         )}
+
         {transcript && <button className="show-details-btn" onClick={() => setShowDetails(true)}>Show Details</button>}
       </div>
 
