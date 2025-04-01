@@ -1,29 +1,29 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import axios from "axios";
 import { useParams } from "react-router-dom";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 import "./ProfileCard.css";
 
-const dp = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
-
-const profiles = [
-  { id: 1, client: "John Doe", issue: "Trauma & Abuse", status: "Completed", profilePic: dp },
-  { id: 2, client: "Jane Smith", issue: "Identity & Self-Esteem", status: "Upcoming", profilePic: dp },
-  { id: 3, client: "David Lee", issue: "Financial Anxiety", status: "Cancelled", profilePic: dp },
-  { id: 4, client: "Emily Clark", issue: "End-of-Life Planning", status: "In Progress", profilePic: dp },
-];
 
 const COLORS = ["#FF6384", "#36A2EB", "#FFCE56", "#4CAF50", "#9966FF"];
 
 const ProfilePage = () => {
   const { id } = useParams();
-  const profile = profiles.find((p) => p.id.toString() === id);
+  const [profile, setProfile] = useState(null);
+
+  useEffect(() => {
+    axios.get(`http://localhost:5000/api/clients/${id}`)
+      .then(response => setProfile(response.data))
+      .catch(error => console.error("Error fetching client:", error));
+  }, [id]);
   const [audioFile, setAudioFile] = useState(null);
   const [transcript, setTranscript] = useState("");
   const [showDetails, setShowDetails] = useState(false);
   const [emotions, setEmotions] = useState([]);
 
   if (!profile) {
-    return <h2>Profile Not Found</h2>;
+    console.log("Client ID:", id)
+    return <h2>Loading!...</h2>;
   }
 
   const handleFileUpload = (event) => {

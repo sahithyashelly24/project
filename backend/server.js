@@ -1,29 +1,126 @@
-require("dotenv").config({path:"/.env"}); // Load environment variables at the very top
+require("dotenv").config(); // Load environment variables
 
 const express = require("express");
-const mongoose = require("mongoose");
+const multer = require("multer");
 const cors = require("cors");
+const path = require("path");
+const { MongoClient, ObjectId } = require("mongodb"); // Use ObjectId from MongoDB
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Ensure the environment variable is loaded
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+// Debugging: Log MONGO_URI
+console.log("MONGO_URI:", process.env.MONGO_URI);
+
 const mongoURI = process.env.MONGO_URI;
 if (!mongoURI) {
   console.error("MONGO_URI is missing. Please check the .env file.");
   process.exit(1);
 }
 
-// Connect to MongoDB
-mongoose
-  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+const DEFAULT_PROFILE_PIC = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"; 
+
+const storage = multer.diskStorage({
+  destination: "./uploads/",
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname)); // Unique file name
+  },
+});
+
+const upload = multer({ storage });
+
+// MongoDB Client Connection
+const client = new MongoClient(mongoURI, { useUnifiedTopology: true });
+
+client.connect()
   .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log("MongoDB Connection Error:", err));
+  .catch((err) => console.error("MongoDB Connection Error:", err));
+
+const db = client.db(); // Access the default database
+const collection = db.collection("clients"); // Access the "clients" collection
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-const clientRoutes = require("./routes/clientRoutes");
-app.use("/api/clients", clientRoutes);
+// Add new client with default profile pic
+app.post("/api/clients", async (req, res) => {
+  try {
+    const newClient = {
+      client: "client name",
+      issue: "what is the issue",
+      status: "Upcoming",
+      locked: false,
+      profilePic: DEFAULT_PROFILE_PIC, // Use default online image
+    };
 
+    const result = await collection.insertOne(newClient);
+    res.json(result.ops[0]);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get all clients
+app.get("/api/clients", async (req, res) => {
+  try {
+    const clients = await collection.find().toArray();
+    res.json(clients);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get client by ID
+app.get("/api/clients/:id", async (req, res) => {
+  try {
+    const clientId = req.params.id;
+
+    console.log("Client ID from request:", clientId);
+
+    if (!ObjectId.isValid(clientId)) {
+      console.log("Invalid MongoDB ObjectId");
+      return res.status(400).json({ message: "Invalid ID format" });
+    }
+
+    const client = await collection.findOne({ _id: new ObjectId(clientId) });
+
+    if (!client) {
+      console.log("Client not found in database");
+      return res.status(404).json({ message: "Client not found" });
+    }
+
+    console.log("Client found:", client);
+    res.json(client);
+  } catch (error) {
+    console.error("Error fetching client:", error);
+    res.status(500).json({ message: "Server Error", error: error.message });
+  }
+});
+
+// Update profile picture
+app.post("/api/clients/upload/:id", upload.single("profilePic"), async (req, res) => {
+  try {
+    const { id } = req.params;
+    const profilePic = req.file ? `/uploads/${req.file.filename}` : DEFAULT_PROFILE_PIC; // Use default if no file uploaded
+
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ error: "Invalid ID format" });
+    }
+
+    const result = await collection.updateOne(
+      { _id: new ObjectId(id) },
+      { $set: { profilePic } }
+    );
+    
+    if (result.modifiedCount > 0) {
+      res.json({ message: "Profile picture updated successfully", profilePic });
+    } else {
+      res.status(404).json({ error: "Client not found" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});

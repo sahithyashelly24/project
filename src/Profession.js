@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./profession.css";
+import { useNavigate } from "react-router-dom";
+
 
 const dp = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
 const videoBg = "https://videos.pexels.com/video-files/1918465/1918465-uhd_2560_1440_24fps.mp4"; // Replace with your video URL
 
 const Profession = () => {
   const [sections, setSections] = useState([]);
-  const [selectedProfile, setSelectedProfile] = useState(null);
+  const navigate = useNavigate();
   const statusOptions = ["Completed", "In Progress", "Cancelled", "Upcoming"];
 
   // Fetch clients from the database
@@ -49,17 +51,23 @@ const Profession = () => {
       .catch(error => console.error("Error updating client:", error));
   };
 
-  // Update profile picture
-  const updateProfilePic = (id, file) => {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const updatedSections = sections.map(section =>
-        section._id === id ? { ...section, profilePic: reader.result } : section
-      );
-      setSections(updatedSections);
-    };
-    if (file) {
-      reader.readAsDataURL(file);
+  // Update profile picture (Upload to Server)
+  const updateProfilePic = async (id, file) => {
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("profilePic", file);
+
+    try {
+      const response = await axios.post(`http://localhost:5000/api/clients/upload/${id}`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      setSections(sections.map(section =>
+        section._id === id ? { ...section, profilePic: response.data.profilePic } : section
+      ));
+    } catch (error) {
+      console.error("Error uploading profile picture:", error);
     }
   };
 
@@ -78,7 +86,7 @@ const Profession = () => {
 
       <div className="profession-container">
         <div className="profession-header">
-          <h2>Projects Overview</h2>
+          <h2>My Clients</h2>
           <button className="profession-add-btn" onClick={addClient}>
             + Add Client
           </button>
@@ -98,12 +106,16 @@ const Profession = () => {
               <tr key={section._id} className="profession-row">
                 <td className="profession-profile">
                   <div className="profile-hover-wrapper">
-                    <img src={section.profilePic} alt="Profile" className="profile-img" />
+                  <img 
+                      src={`http://localhost:5000${section.profilePic}`} // Ensure the full URL is used
+                      alt="Profile" 
+                      className="profile-img" 
+                    />
                     <div className="profile-hover-options">
                       <button onClick={() => document.getElementById(`fileInput-${section._id}`).click()}>
                         Change Profile Pic
                       </button>
-                      <button onClick={() => window.location.href = `/profile/${section.id}`}>
+                      <button onClick={() => navigate(`/profile/${section._id}`)}>
                         View Profile
                       </button>
                     </div>
@@ -161,26 +173,6 @@ const Profession = () => {
           </tbody>
         </table>
       </div>
-
-      {selectedProfile && (
-        <div className="profile-overlay">
-          <div className="profile-card">
-            <button className="profile-close-btn" onClick={() => setSelectedProfile(null)}>✖</button>
-            <div className="profile-content">
-              <img src={selectedProfile.profilePic} alt="Profile" className="profile-image" />
-              <div className="profile-details">
-                <h2>{selectedProfile.client}</h2>
-                <p><strong>Service:</strong> {selectedProfile.issue}</p>
-                <p><strong>Status:</strong> {selectedProfile.status}</p>
-              </div>
-            </div>
-            <div className="profile-audio-section">
-              <input type="file" accept="audio/*" className="profile-audio-input" />
-              <button className="profile-submit-btn">Submit Audio</button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
