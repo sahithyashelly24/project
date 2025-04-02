@@ -13,7 +13,8 @@ const ProfilePage = () => {
   const [transcript, setTranscript] = useState("");
   const [showDetails, setShowDetails] = useState(false);
   const [emotions, setEmotions] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(false);
+  
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/clients/${id}`)
@@ -26,15 +27,13 @@ const ProfilePage = () => {
     return <h2>Loading!...</h2>;
   }
 
-  // Handle file selection (trigger upload)
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setAudioFile(file); // Store the file in state for later upload
+      setAudioFile(file);
     }
   };
 
-  // Handle file upload and send to FastAPI backend for transcription
   const handleFileUpload = async () => {
     if (!audioFile) {
       alert("Please select an audio file first.");
@@ -43,19 +42,14 @@ const ProfilePage = () => {
 
     const formData = new FormData();
     formData.append("file", audioFile);
+    setIsLoading(true);
 
     try {
-      // Send the file to FastAPI for processing
       const response = await axios.post("http://localhost:8000/upload_audio", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+        headers: { "Content-Type": "multipart/form-data" },
       });
 
-      // Get the transcription from the backend response
       setTranscript(response.data.transcription.transcript);
-
-      // Optionally handle emotions or other data
       setEmotions([
         { name: "Happy", value: 35 },
         { name: "Sad", value: 25 },
@@ -66,12 +60,18 @@ const ProfilePage = () => {
     } catch (error) {
       console.error("Error uploading audio:", error);
       setTranscript("Error transcribing the audio.");
+    } finally {
+      setIsLoading(false);
     }
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(transcript);
+    alert("Transcript copied!");
   };
 
   return (
     <div className="grid-container">
-      {/* Top Section - Profile Card */}
       <div className="cprofile-card">
         <div className="profile-image-container">
           <img src={profile.profilePic} alt="Profile" className="profile-image" />
@@ -83,25 +83,40 @@ const ProfilePage = () => {
         </div>
       </div>
 
-      {/* Bottom Left - Audio Upload & Transcript */}
       <div className="audio-transcript-card">
         <div className="profile-audio-section">
-          <input type="file" accept="audio/*" onChange={handleFileChange} />
-          <button onClick={handleFileUpload}>Transcribe Audio</button>
+          <input type="file" accept="audio/*" onChange={handleFileChange} className="rounded-input" />
           {audioFile && <audio controls src={URL.createObjectURL(audioFile)} className="audio-player"></audio>}
+          
+          <button 
+            onClick={handleFileUpload} 
+            className="transcribe-btn rounded-btn"
+            disabled={isLoading}
+          >
+            {isLoading ? "Transcribing..." : "Transcribe Audio"}
+          </button>
+          
+          {isLoading && <div className="loading-bar"></div>}
         </div>
 
         {transcript && (
           <div className="ctranscript-box">
+          <div className="transcript-header">
             <h4>Transcript:</h4>
+            <span className="copy-icon" onClick={copyToClipboard} title="Copy to Clipboard">
+              📄
+            </span>
+          </div>
+          <div className="transcript-content">
             <p>{transcript}</p>
           </div>
+        </div>
+        
         )}
 
-        {transcript && <button className="show-details-btn" onClick={() => setShowDetails(true)}>Show Details</button>}
+        {transcript && <button className="show-details-btn rounded-btn" onClick={() => setShowDetails(true)}>Show Details</button>}
       </div>
 
-      {/* Bottom Right - Emotion Analysis */}
       {showDetails && (
         <div className="emotion-analysis-card">
           <h3>Emotion Analysis</h3>
