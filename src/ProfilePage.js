@@ -4,7 +4,10 @@ import { useParams } from "react-router-dom";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 import "./ProfileCard.css";
 
-const COLORS = ["#FF6384", "#36A2EB", "#FFCE56", "#4CAF50", "#9966FF"];
+const generateColor = (index) => {
+  const hue = (index * 137) % 360; // Spread colors evenly
+  return `hsl(${hue}, 70%, 60%)`; // Use HSL for better variety
+};
 
 const ProfilePage = () => {
   const { id } = useParams();
@@ -13,6 +16,8 @@ const ProfilePage = () => {
   const [transcript, setTranscript] = useState("");
   const [showDetails, setShowDetails] = useState(false);
   const [emotions, setEmotions] = useState([]);
+  const [filePath, setFilePath] = useState("");
+  const [prediction, setPrediction] = useState(null)
 
   useEffect(() => {
     axios
@@ -52,22 +57,53 @@ const ProfilePage = () => {
         },
       });
 
-      // Get the transcription from the backend response
-      setTranscript(response.data.transcription.transcript);
+      setFilePath(response.data.file_path)
 
-      // Optionally handle emotions or other data
-      setEmotions([
-        { name: "Happy", value: 35 },
-        { name: "Sad", value: 25 },
-        { name: "Angry", value: 15 },
-        { name: "Fearful", value: 15 },
-        { name: "Neutral", value: 10 },
-      ]);
     } catch (error) {
       console.error("Error uploading audio:", error);
-      setTranscript("Error transcribing the audio.");
     }
   };
+
+
+  const handleTranscribe = async () => {
+    if (!filePath){
+      alert("please upload an audio file firs.");
+      return;
+    }
+    try {
+      const response=await axios.post("http://localhost:8000/transcribe_audio",{file_path:filePath});
+      setTranscript(response.data.transcript)
+    }catch (e){
+      console.error("Error transcribing the audio: ",e);
+    }
+  }
+
+  const handleAnalyzeEmotions = async ()=>{
+    if (!filePath){
+      alert("please upload the audio file first.");
+      return;
+    }
+    try{
+      const response= await axios.post("http://localhost:8000/analyze_emotions",{file_path:filePath});
+      const emotionsData=response.data;
+      console.log(emotionsData);
+
+      const emotionNames = emotionsData.map(emotion => emotion.name);
+
+      setEmotions(emotionsData);
+      setShowDetails(true);
+
+      const predictResponse = await axios.post("http://localhost:8000/predict_emotions", {
+        emotions: emotionNames,  // Send extracted names
+        disease: profile.issue,  // Rename issue to disease
+      });
+  
+      setPrediction(predictResponse.data.prediction);
+
+    }catch(e){
+      console.error("error analyzing emotions: ",e);
+    }
+  }
 
   return (
     <div className="grid-container">
@@ -83,22 +119,27 @@ const ProfilePage = () => {
         </div>
       </div>
 
-      {/* Bottom Left - Audio Upload & Transcript */}
+      {/* Bottom Left - Audio Upload */}
       <div className="audio-transcript-card">
         <div className="profile-audio-section">
           <input type="file" accept="audio/*" onChange={handleFileChange} />
-          <button onClick={handleFileUpload}>Transcribe Audio</button>
+          <button onClick={handleFileUpload}>Upload Audio</button>
           {audioFile && <audio controls src={URL.createObjectURL(audioFile)} className="audio-player"></audio>}
         </div>
 
+        {/* Action Buttons */}
+        <div className="action-buttons">
+          <button onClick={handleTranscribe} disabled={!filePath}>Transcribe Audio</button>
+          <button onClick={handleAnalyzeEmotions} disabled={!filePath}>Analyze Emotions</button>
+        </div>
+
+        {/* Transcription Display */}
         {transcript && (
           <div className="ctranscript-box">
             <h4>Transcript:</h4>
             <p>{transcript}</p>
           </div>
         )}
-
-        {transcript && <button className="show-details-btn" onClick={() => setShowDetails(true)}>Show Details</button>}
       </div>
 
       {/* Bottom Right - Emotion Analysis */}
@@ -108,13 +149,17 @@ const ProfilePage = () => {
           <PieChart width={300} height={300}>
             <Pie data={emotions} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" dataKey="value">
               {emotions.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                <Cell key={`cell-${index}`} fill={generateColor(index)} />
               ))}
             </Pie>
             <Tooltip />
             <Legend />
           </PieChart>
-          <h4>Recommended Sessions: {Math.ceil(emotions.reduce((sum, e) => sum + e.value, 0) / 20)}</h4>
+          {prediction !== null ? (
+            <h4><strong>Predicted Sessions:</strong> {prediction}</h4> // ?? I changed here
+          ) : (
+            <h4>Waiting for prediction...</h4> // ?? I changed here
+          )}
         </div>
       )}
     </div>

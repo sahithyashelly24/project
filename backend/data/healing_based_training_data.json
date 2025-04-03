@@ -1,0 +1,4515 @@
+[
+    {
+        "emotions": [
+            "relief",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 17
+    },
+    {
+        "emotions": [
+            "safety",
+            "fear",
+            "anger",
+            "peace"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "emotional regulation",
+            "relief"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 1
+    },
+    {
+        "emotions": [
+            "paranoia",
+            "delusions",
+            "confusion"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 46
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "frustration"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 8
+    },
+    {
+        "emotions": [
+            "sadness",
+            "mania"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 35
+    },
+    {
+        "emotions": [
+            "obsession",
+            "frustration",
+            "anxiety"
+        ],
+        "disease": "OCD",
+        "sessions_required": 28
+    },
+    {
+        "emotions": [
+            "fatigue",
+            "sadness",
+            "relief",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 9
+    },
+    {
+        "emotions": [
+            "focus",
+            "restlessness"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 8
+    },
+    {
+        "emotions": [
+            "fear",
+            "restlessness",
+            "assurance",
+            "tension"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 22
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "patience",
+            "frustration",
+            "impulsivity"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 18
+    },
+    {
+        "emotions": [
+            "fatigue",
+            "hope"
+        ],
+        "disease": "Depression",
+        "sessions_required": 8
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "resilience",
+            "peace",
+            "safety"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "peace",
+            "fear"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 28
+    },
+    {
+        "emotions": [
+            "tension",
+            "assurance",
+            "calmness",
+            "relaxation"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "emotional regulation",
+            "anger",
+            "anxiety"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 27
+    },
+    {
+        "emotions": [
+            "happiness",
+            "hope"
+        ],
+        "disease": "Depression",
+        "sessions_required": 2
+    },
+    {
+        "emotions": [
+            "hope",
+            "hopelessness",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "hope",
+            "hopelessness",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "anger",
+            "relief",
+            "emotional regulation",
+            "anxiety"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "fatigue",
+            "sadness",
+            "hope",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "hope",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "delusions",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 47
+    },
+    {
+        "emotions": [
+            "safety",
+            "intrusive thoughts",
+            "fear",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "stability",
+            "balance",
+            "irritability",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 16
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "obsession",
+            "comfort",
+            "relief"
+        ],
+        "disease": "OCD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "fear",
+            "anger",
+            "intrusive thoughts",
+            "safety"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 32
+    },
+    {
+        "emotions": [
+            "calmness",
+            "anxiety",
+            "relief",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "anger",
+            "mood swings",
+            "relief"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 26
+    },
+    {
+        "emotions": [
+            "stability",
+            "delusions",
+            "confusion",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "patience",
+            "focus"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 1
+    },
+    {
+        "emotions": [
+            "stability",
+            "calmness",
+            "delusions"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "calmness",
+            "worry",
+            "relaxation",
+            "assurance"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "relief",
+            "comfort",
+            "obsession"
+        ],
+        "disease": "OCD",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "comfort",
+            "anxiety",
+            "acceptance",
+            "relief"
+        ],
+        "disease": "OCD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "resilience",
+            "peace"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 1
+    },
+    {
+        "emotions": [
+            "fatigue",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 22
+    },
+    {
+        "emotions": [
+            "irritability",
+            "mania"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 31
+    },
+    {
+        "emotions": [
+            "confusion",
+            "paranoia",
+            "delusions",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 47
+    },
+    {
+        "emotions": [
+            "patience",
+            "frustration"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "safety",
+            "resilience",
+            "intrusive thoughts"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "patience",
+            "impulsivity",
+            "restlessness"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 9
+    },
+    {
+        "emotions": [
+            "peace",
+            "irritability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "calmness",
+            "stability",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "mania",
+            "peace",
+            "irritability",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 29
+    },
+    {
+        "emotions": [
+            "peace",
+            "mania"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 31
+    },
+    {
+        "emotions": [
+            "anger",
+            "safety",
+            "peace"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "relief",
+            "calmness",
+            "emotional regulation"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "patience",
+            "restlessness",
+            "focus",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "restlessness",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "obsession",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 21
+    },
+    {
+        "emotions": [
+            "sadness",
+            "stability",
+            "mania",
+            "balance"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "assurance",
+            "tension",
+            "restlessness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 8
+    },
+    {
+        "emotions": [
+            "relief",
+            "mood swings",
+            "emotional regulation"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "relief",
+            "anger",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 38
+    },
+    {
+        "emotions": [
+            "clarity",
+            "paranoia",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "obsession",
+            "anxiety",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 27
+    },
+    {
+        "emotions": [
+            "worry",
+            "fear",
+            "calmness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 18
+    },
+    {
+        "emotions": [
+            "obsession",
+            "acceptance",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 17
+    },
+    {
+        "emotions": [
+            "stability",
+            "delusions",
+            "clarity"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "calmness",
+            "fear",
+            "worry",
+            "restlessness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "acceptance",
+            "obsession"
+        ],
+        "disease": "OCD",
+        "sessions_required": 18
+    },
+    {
+        "emotions": [
+            "happiness",
+            "hopelessness",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 9
+    },
+    {
+        "emotions": [
+            "peace",
+            "irritability",
+            "balance",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "anger",
+            "emotional regulation",
+            "calmness"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "mood swings",
+            "calmness"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "patience",
+            "impulsivity",
+            "focus"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "relief",
+            "fatigue",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "obsession",
+            "relief",
+            "comfort"
+        ],
+        "disease": "OCD",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "calm",
+            "frustration"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "clarity",
+            "calmness",
+            "stability",
+            "confusion"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "sadness",
+            "balance",
+            "mania",
+            "peace"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "resilience",
+            "anger"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 22
+    },
+    {
+        "emotions": [
+            "peace",
+            "stability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 1
+    },
+    {
+        "emotions": [
+            "happiness",
+            "sadness",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "frustration",
+            "acceptance",
+            "comfort",
+            "obsession"
+        ],
+        "disease": "OCD",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "irritability",
+            "balance",
+            "peace"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "frustration",
+            "focus",
+            "patience",
+            "impulsivity"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "assurance",
+            "fear"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 17
+    },
+    {
+        "emotions": [
+            "anger",
+            "mood swings",
+            "emotional regulation"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "calmness"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "comfort",
+            "acceptance",
+            "relief",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "delusions",
+            "paranoia",
+            "calmness",
+            "confusion"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 43
+    },
+    {
+        "emotions": [
+            "peace",
+            "mania",
+            "irritability",
+            "balance"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "anger",
+            "relief",
+            "emotional regulation",
+            "anxiety"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "frustration",
+            "restlessness"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "calmness",
+            "anxiety",
+            "anger",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 38
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "patience"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "stability",
+            "peace",
+            "irritability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "relief",
+            "hopelessness",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "hope",
+            "relief",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "patience",
+            "frustration",
+            "restlessness",
+            "focus"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 8
+    },
+    {
+        "emotions": [
+            "clarity",
+            "paranoia",
+            "stability",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "fear",
+            "calmness",
+            "assurance",
+            "worry"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "stability",
+            "mania"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 27
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "frustration",
+            "focus"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "fear",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 25
+    },
+    {
+        "emotions": [
+            "irritability",
+            "peace",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 29
+    },
+    {
+        "emotions": [
+            "peace",
+            "fear",
+            "intrusive thoughts",
+            "anger"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 27
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "fear",
+            "anger",
+            "peace"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 35
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "resilience",
+            "peace",
+            "anger"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "relief",
+            "mood swings",
+            "emotional regulation"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 16
+    },
+    {
+        "emotions": [
+            "delusions",
+            "paranoia",
+            "stability"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 48
+    },
+    {
+        "emotions": [
+            "acceptance",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "resilience",
+            "safety",
+            "peace"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "anger",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 37
+    },
+    {
+        "emotions": [
+            "calm",
+            "restlessness"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "happiness",
+            "hope"
+        ],
+        "disease": "Depression",
+        "sessions_required": 2
+    },
+    {
+        "emotions": [
+            "irritability",
+            "peace"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 17
+    },
+    {
+        "emotions": [
+            "anger",
+            "relief",
+            "anxiety",
+            "emotional regulation"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "patience",
+            "calm",
+            "focus",
+            "restlessness"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "calmness",
+            "assurance"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 4
+    },
+    {
+        "emotions": [
+            "sadness",
+            "hope",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "hope",
+            "fatigue",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "fear",
+            "safety",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "anger",
+            "emotional regulation"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 40
+    },
+    {
+        "emotions": [
+            "comfort",
+            "obsession",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 25
+    },
+    {
+        "emotions": [
+            "emotional regulation",
+            "anxiety"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 24
+    },
+    {
+        "emotions": [
+            "delusions",
+            "paranoia",
+            "stability"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 43
+    },
+    {
+        "emotions": [
+            "relief",
+            "anger",
+            "anxiety",
+            "emotional regulation"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "worry",
+            "restlessness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 9
+    },
+    {
+        "emotions": [
+            "safety",
+            "intrusive thoughts",
+            "fear",
+            "peace"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "emotional regulation",
+            "relief",
+            "mood swings",
+            "anxiety"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "calmness",
+            "relief"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 3
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "fatigue"
+        ],
+        "disease": "Depression",
+        "sessions_required": 24
+    },
+    {
+        "emotions": [
+            "worry",
+            "fear",
+            "calmness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 21
+    },
+    {
+        "emotions": [
+            "calm",
+            "focus",
+            "frustration"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 8
+    },
+    {
+        "emotions": [
+            "happiness",
+            "hope"
+        ],
+        "disease": "Depression",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "hope",
+            "fatigue",
+            "relief",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "confusion",
+            "clarity",
+            "stability",
+            "delusions"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "anger",
+            "relief",
+            "emotional regulation",
+            "anxiety"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "balance",
+            "stability",
+            "mania",
+            "irritability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "acceptance",
+            "obsession"
+        ],
+        "disease": "OCD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "calmness",
+            "confusion",
+            "paranoia",
+            "delusions"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 47
+    },
+    {
+        "emotions": [
+            "obsession",
+            "acceptance",
+            "anxiety"
+        ],
+        "disease": "OCD",
+        "sessions_required": 22
+    },
+    {
+        "emotions": [
+            "stability",
+            "irritability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "clarity",
+            "confusion"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 43
+    },
+    {
+        "emotions": [
+            "anger",
+            "anxiety",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 28
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "fear",
+            "relaxation",
+            "tension"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "focus",
+            "calm",
+            "restlessness",
+            "patience"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "peace",
+            "fear",
+            "safety",
+            "intrusive thoughts"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "anger",
+            "peace",
+            "intrusive thoughts"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 23
+    },
+    {
+        "emotions": [
+            "fear",
+            "anger"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 34
+    },
+    {
+        "emotions": [
+            "relief",
+            "calmness",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "calmness",
+            "fear"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "calmness",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 28
+    },
+    {
+        "emotions": [
+            "delusions",
+            "calmness",
+            "stability",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "mania",
+            "stability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "tension",
+            "calmness",
+            "restlessness",
+            "fear"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 18
+    },
+    {
+        "emotions": [
+            "balance",
+            "peace",
+            "irritability",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "comfort",
+            "acceptance",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "mania",
+            "balance"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "relief",
+            "sadness",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "fear",
+            "calmness",
+            "tension"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "relief",
+            "hope"
+        ],
+        "disease": "Depression",
+        "sessions_required": 0
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "safety",
+            "fear",
+            "anger"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 35
+    },
+    {
+        "emotions": [
+            "fatigue",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "focus",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 4
+    },
+    {
+        "emotions": [
+            "sadness",
+            "fatigue"
+        ],
+        "disease": "Depression",
+        "sessions_required": 28
+    },
+    {
+        "emotions": [
+            "emotional regulation",
+            "anger",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "sadness",
+            "hope",
+            "fatigue"
+        ],
+        "disease": "Depression",
+        "sessions_required": 27
+    },
+    {
+        "emotions": [
+            "happiness",
+            "sadness",
+            "hopelessness",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "balance",
+            "stability",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 16
+    },
+    {
+        "emotions": [
+            "balance",
+            "irritability",
+            "peace"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "patience",
+            "frustration",
+            "impulsivity",
+            "focus"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "delusions",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 46
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "safety",
+            "resilience",
+            "fear"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "comfort",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 24
+    },
+    {
+        "emotions": [
+            "calmness",
+            "relaxation",
+            "assurance",
+            "tension"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "frustration",
+            "obsession"
+        ],
+        "disease": "OCD",
+        "sessions_required": 27
+    },
+    {
+        "emotions": [
+            "clarity",
+            "confusion"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 27
+    },
+    {
+        "emotions": [
+            "calmness",
+            "restlessness",
+            "relaxation",
+            "tension"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "mania",
+            "peace",
+            "balance"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 16
+    },
+    {
+        "emotions": [
+            "balance",
+            "sadness",
+            "mania"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 30
+    },
+    {
+        "emotions": [
+            "happiness",
+            "hope"
+        ],
+        "disease": "Depression",
+        "sessions_required": 4
+    },
+    {
+        "emotions": [
+            "frustration",
+            "impulsivity",
+            "patience"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 16
+    },
+    {
+        "emotions": [
+            "clarity",
+            "paranoia",
+            "confusion"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 31
+    },
+    {
+        "emotions": [
+            "patience",
+            "impulsivity",
+            "restlessness",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 8
+    },
+    {
+        "emotions": [
+            "assurance",
+            "tension",
+            "restlessness",
+            "calmness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "calmness",
+            "relief",
+            "anger"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "confusion",
+            "stability",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 32
+    },
+    {
+        "emotions": [
+            "stability",
+            "clarity",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "delusions",
+            "clarity",
+            "stability"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "stability",
+            "irritability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 38
+    },
+    {
+        "emotions": [
+            "relief",
+            "anxiety",
+            "obsession"
+        ],
+        "disease": "OCD",
+        "sessions_required": 18
+    },
+    {
+        "emotions": [
+            "irritability",
+            "mania"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 24
+    },
+    {
+        "emotions": [
+            "anger",
+            "resilience",
+            "fear",
+            "safety"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "mania",
+            "irritability",
+            "peace",
+            "stability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "emotional regulation",
+            "anger"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "mania",
+            "sadness",
+            "stability",
+            "balance"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "safety",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 3
+    },
+    {
+        "emotions": [
+            "tension",
+            "assurance",
+            "restlessness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "happiness",
+            "sadness",
+            "hope",
+            "hopelessness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 9
+    },
+    {
+        "emotions": [
+            "fear",
+            "intrusive thoughts",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "obsession",
+            "acceptance",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "delusions",
+            "clarity"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 42
+    },
+    {
+        "emotions": [
+            "fear",
+            "restlessness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "fear",
+            "intrusive thoughts"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "comfort",
+            "acceptance",
+            "anxiety"
+        ],
+        "disease": "OCD",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "sadness",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 29
+    },
+    {
+        "emotions": [
+            "frustration",
+            "patience"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "hope",
+            "relief",
+            "fatigue"
+        ],
+        "disease": "Depression",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "frustration",
+            "relief",
+            "comfort"
+        ],
+        "disease": "OCD",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "peace",
+            "anger",
+            "safety",
+            "intrusive thoughts"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "safety",
+            "peace",
+            "anger"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "relief",
+            "acceptance",
+            "comfort"
+        ],
+        "disease": "OCD",
+        "sessions_required": 1
+    },
+    {
+        "emotions": [
+            "relief",
+            "anxiety",
+            "acceptance",
+            "comfort"
+        ],
+        "disease": "OCD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "fatigue",
+            "hope",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "happiness",
+            "fatigue",
+            "hopelessness",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 25
+    },
+    {
+        "emotions": [
+            "patience",
+            "focus"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 3
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "patience"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "focus",
+            "frustration",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "obsession",
+            "relief"
+        ],
+        "disease": "OCD",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "hope",
+            "happiness",
+            "sadness",
+            "hopelessness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "peace",
+            "fear",
+            "safety"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "resilience",
+            "safety",
+            "anger"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "focus",
+            "calm",
+            "restlessness"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "comfort"
+        ],
+        "disease": "OCD",
+        "sessions_required": 28
+    },
+    {
+        "emotions": [
+            "balance",
+            "peace",
+            "mania",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "calmness",
+            "tension",
+            "assurance",
+            "fear"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 8
+    },
+    {
+        "emotions": [
+            "anger",
+            "fear",
+            "peace",
+            "safety"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "acceptance",
+            "anxiety",
+            "obsession"
+        ],
+        "disease": "OCD",
+        "sessions_required": 25
+    },
+    {
+        "emotions": [
+            "relief",
+            "anxiety",
+            "emotional regulation"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "sadness",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "impulsivity",
+            "frustration"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "anger",
+            "fear",
+            "peace"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "frustration",
+            "patience"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 18
+    },
+    {
+        "emotions": [
+            "calmness",
+            "relief"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 3
+    },
+    {
+        "emotions": [
+            "delusions",
+            "clarity",
+            "stability"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "comfort",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "safety",
+            "peace",
+            "intrusive thoughts"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "peace",
+            "mania",
+            "stability",
+            "irritability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "resilience",
+            "intrusive thoughts",
+            "safety"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "fear",
+            "restlessness",
+            "worry",
+            "assurance"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 22
+    },
+    {
+        "emotions": [
+            "hope",
+            "sadness",
+            "hopelessness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "tension"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "impulsivity",
+            "calm",
+            "focus"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "relief",
+            "happiness",
+            "fatigue"
+        ],
+        "disease": "Depression",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "comfort",
+            "acceptance",
+            "obsession"
+        ],
+        "disease": "OCD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "anger",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 39
+    },
+    {
+        "emotions": [
+            "tension",
+            "fear",
+            "relaxation"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 21
+    },
+    {
+        "emotions": [
+            "safety",
+            "intrusive thoughts"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 34
+    },
+    {
+        "emotions": [
+            "relief",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 3
+    },
+    {
+        "emotions": [
+            "safety",
+            "fear",
+            "intrusive thoughts"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "frustration",
+            "impulsivity",
+            "calm",
+            "patience"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "anger",
+            "peace",
+            "resilience",
+            "intrusive thoughts"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "anger",
+            "relief",
+            "mood swings",
+            "anxiety"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 34
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "obsession",
+            "acceptance",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 26
+    },
+    {
+        "emotions": [
+            "confusion",
+            "delusions"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 29
+    },
+    {
+        "emotions": [
+            "relaxation",
+            "calmness",
+            "fear"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 9
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "calm",
+            "focus",
+            "impulsivity"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "patience",
+            "calm",
+            "impulsivity",
+            "frustration"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "happiness",
+            "hope"
+        ],
+        "disease": "Depression",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "acceptance",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 29
+    },
+    {
+        "emotions": [
+            "calm",
+            "restlessness",
+            "focus",
+            "impulsivity"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 8
+    },
+    {
+        "emotions": [
+            "calmness",
+            "anxiety",
+            "emotional regulation",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "relief",
+            "hope",
+            "fatigue",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 9
+    },
+    {
+        "emotions": [
+            "fatigue",
+            "happiness",
+            "hope"
+        ],
+        "disease": "Depression",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "clarity",
+            "confusion"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 37
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "obsession",
+            "frustration",
+            "acceptance"
+        ],
+        "disease": "OCD",
+        "sessions_required": 30
+    },
+    {
+        "emotions": [
+            "peace",
+            "mania",
+            "stability",
+            "balance"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 16
+    },
+    {
+        "emotions": [
+            "happiness",
+            "hopelessness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 28
+    },
+    {
+        "emotions": [
+            "obsession",
+            "relief"
+        ],
+        "disease": "OCD",
+        "sessions_required": 25
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "sadness",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 18
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "obsession",
+            "acceptance"
+        ],
+        "disease": "OCD",
+        "sessions_required": 29
+    },
+    {
+        "emotions": [
+            "focus",
+            "patience",
+            "calm",
+            "impulsivity"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 8
+    },
+    {
+        "emotions": [
+            "calmness",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 38
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "frustration",
+            "focus"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "balance",
+            "mania",
+            "peace"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "peace",
+            "sadness",
+            "balance"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "tension",
+            "fear",
+            "relaxation"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "comfort",
+            "relief"
+        ],
+        "disease": "OCD",
+        "sessions_required": 0
+    },
+    {
+        "emotions": [
+            "relaxation",
+            "assurance"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 2
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "peace"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 17
+    },
+    {
+        "emotions": [
+            "delusions",
+            "paranoia",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 48
+    },
+    {
+        "emotions": [
+            "emotional regulation",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 28
+    },
+    {
+        "emotions": [
+            "calmness",
+            "paranoia",
+            "confusion"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 33
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 18
+    },
+    {
+        "emotions": [
+            "mania",
+            "irritability",
+            "peace"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "calmness",
+            "emotional regulation",
+            "mood swings",
+            "anger"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "anger"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 24
+    },
+    {
+        "emotions": [
+            "calm",
+            "impulsivity"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "confusion",
+            "delusions",
+            "stability"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 28
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "tension"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 17
+    },
+    {
+        "emotions": [
+            "frustration",
+            "calm",
+            "focus",
+            "impulsivity"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "calmness",
+            "assurance",
+            "restlessness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "sadness",
+            "fatigue"
+        ],
+        "disease": "Depression",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "resilience",
+            "safety",
+            "intrusive thoughts"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "resilience",
+            "anger",
+            "intrusive thoughts"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 34
+    },
+    {
+        "emotions": [
+            "irritability",
+            "stability",
+            "balance",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "stability",
+            "irritability",
+            "peace",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 16
+    },
+    {
+        "emotions": [
+            "relief",
+            "fatigue",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 27
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "tension"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "stability",
+            "calmness",
+            "confusion",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "fatigue",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 28
+    },
+    {
+        "emotions": [
+            "mania",
+            "balance",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "fear",
+            "worry",
+            "relaxation"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "frustration",
+            "patience",
+            "impulsivity"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "obsession",
+            "comfort",
+            "relief"
+        ],
+        "disease": "OCD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "patience",
+            "focus"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 4
+    },
+    {
+        "emotions": [
+            "relief",
+            "emotional regulation",
+            "mood swings",
+            "anxiety"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 16
+    },
+    {
+        "emotions": [
+            "mood swings",
+            "anxiety",
+            "calmness"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 38
+    },
+    {
+        "emotions": [
+            "sadness",
+            "irritability",
+            "balance",
+            "stability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "calm",
+            "frustration",
+            "patience",
+            "impulsivity"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "anger",
+            "intrusive thoughts",
+            "fear"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 24
+    },
+    {
+        "emotions": [
+            "obsession",
+            "relief"
+        ],
+        "disease": "OCD",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "tension",
+            "fear",
+            "restlessness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 21
+    },
+    {
+        "emotions": [
+            "sadness",
+            "peace",
+            "mania",
+            "irritability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 34
+    },
+    {
+        "emotions": [
+            "fear",
+            "resilience",
+            "safety"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "emotional regulation",
+            "relief",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "patience",
+            "focus"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "relief",
+            "anxiety",
+            "calmness"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "anger",
+            "mood swings",
+            "relief"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "fear",
+            "anger",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "stability",
+            "clarity",
+            "confusion",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "confusion",
+            "clarity",
+            "delusions"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 44
+    },
+    {
+        "emotions": [
+            "safety",
+            "peace",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "calmness",
+            "restlessness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 21
+    },
+    {
+        "emotions": [
+            "obsession",
+            "acceptance"
+        ],
+        "disease": "OCD",
+        "sessions_required": 17
+    },
+    {
+        "emotions": [
+            "clarity",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 3
+    },
+    {
+        "emotions": [
+            "happiness",
+            "relief",
+            "fatigue",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "sadness",
+            "hope",
+            "fatigue"
+        ],
+        "disease": "Depression",
+        "sessions_required": 23
+    },
+    {
+        "emotions": [
+            "fear",
+            "restlessness",
+            "assurance"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "paranoia",
+            "confusion"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 40
+    },
+    {
+        "emotions": [
+            "emotional regulation",
+            "mood swings",
+            "calmness",
+            "anxiety"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "peace",
+            "mania"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "hope",
+            "relief",
+            "fatigue",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "peace",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "relief",
+            "obsession",
+            "frustration",
+            "acceptance"
+        ],
+        "disease": "OCD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "comfort",
+            "acceptance"
+        ],
+        "disease": "OCD",
+        "sessions_required": 2
+    },
+    {
+        "emotions": [
+            "relief",
+            "obsession",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "confusion",
+            "stability"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 50
+    },
+    {
+        "emotions": [
+            "hope",
+            "hopelessness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "hope",
+            "happiness",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "confusion",
+            "stability"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 42
+    },
+    {
+        "emotions": [
+            "peace",
+            "anger",
+            "fear",
+            "safety"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "relief",
+            "calmness",
+            "anxiety",
+            "emotional regulation"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "calmness",
+            "emotional regulation"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "resilience",
+            "intrusive thoughts",
+            "fear"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 21
+    },
+    {
+        "emotions": [
+            "peace",
+            "mania",
+            "stability",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "anger",
+            "peace",
+            "fear"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 31
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "safety",
+            "resilience",
+            "peace"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "frustration",
+            "focus",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "irritability",
+            "mania",
+            "sadness",
+            "balance"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 31
+    },
+    {
+        "emotions": [
+            "worry",
+            "assurance",
+            "fear"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 24
+    },
+    {
+        "emotions": [
+            "tension",
+            "worry",
+            "assurance"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 18
+    },
+    {
+        "emotions": [
+            "resilience",
+            "safety"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 0
+    },
+    {
+        "emotions": [
+            "calmness",
+            "stability"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 3
+    },
+    {
+        "emotions": [
+            "comfort",
+            "relief",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "clarity",
+            "stability",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "anger",
+            "calmness",
+            "relief",
+            "anxiety"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "balance",
+            "irritability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 37
+    },
+    {
+        "emotions": [
+            "hope",
+            "hopelessness",
+            "happiness",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "calmness",
+            "mood swings",
+            "anxiety",
+            "anger"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 39
+    },
+    {
+        "emotions": [
+            "stability",
+            "peace"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "hope",
+            "happiness",
+            "fatigue"
+        ],
+        "disease": "Depression",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "restlessness",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "calmness",
+            "relief"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 16
+    },
+    {
+        "emotions": [
+            "calmness",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 40
+    },
+    {
+        "emotions": [
+            "confusion",
+            "delusions",
+            "clarity"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 46
+    },
+    {
+        "emotions": [
+            "patience",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 2
+    },
+    {
+        "emotions": [
+            "stability",
+            "confusion",
+            "clarity"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "stability",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 24
+    },
+    {
+        "emotions": [
+            "happiness",
+            "fatigue",
+            "hope",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "fear",
+            "worry",
+            "relaxation",
+            "restlessness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 23
+    },
+    {
+        "emotions": [
+            "balance",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 16
+    },
+    {
+        "emotions": [
+            "fatigue",
+            "hopelessness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "focus",
+            "calm",
+            "patience"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "sadness",
+            "hope"
+        ],
+        "disease": "Depression",
+        "sessions_required": 9
+    },
+    {
+        "emotions": [
+            "stability",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 48
+    },
+    {
+        "emotions": [
+            "stability",
+            "delusions"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 27
+    },
+    {
+        "emotions": [
+            "intrusive thoughts",
+            "resilience",
+            "fear"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "relief",
+            "calmness"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 0
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "focus",
+            "frustration",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "anger",
+            "calmness",
+            "relief"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "confusion",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 21
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "patience",
+            "frustration"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "sadness",
+            "fatigue",
+            "hope",
+            "hopelessness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 29
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "calmness",
+            "worry"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "obsession",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 21
+    },
+    {
+        "emotions": [
+            "calmness",
+            "delusions",
+            "stability"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "relief",
+            "anger",
+            "calmness",
+            "mood swings"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "stability",
+            "balance",
+            "mania",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "calmness",
+            "relief"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 4
+    },
+    {
+        "emotions": [
+            "balance",
+            "stability",
+            "peace",
+            "irritability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "focus",
+            "restlessness",
+            "frustration"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "calm",
+            "restlessness"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 17
+    },
+    {
+        "emotions": [
+            "relaxation",
+            "assurance",
+            "calmness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 1
+    },
+    {
+        "emotions": [
+            "tension",
+            "relaxation"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "sadness",
+            "mania",
+            "stability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "delusions",
+            "confusion"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 23
+    },
+    {
+        "emotions": [
+            "anger",
+            "calmness"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 28
+    },
+    {
+        "emotions": [
+            "stability",
+            "paranoia",
+            "delusions"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 39
+    },
+    {
+        "emotions": [
+            "peace",
+            "intrusive thoughts",
+            "safety",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "calmness",
+            "clarity"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 0
+    },
+    {
+        "emotions": [
+            "calmness",
+            "delusions",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 26
+    },
+    {
+        "emotions": [
+            "clarity",
+            "paranoia",
+            "calmness",
+            "confusion"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "fear",
+            "worry"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "calmness",
+            "anger"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 31
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "relief",
+            "fatigue",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 23
+    },
+    {
+        "emotions": [
+            "relief",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 26
+    },
+    {
+        "emotions": [
+            "sadness",
+            "hope",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "balance",
+            "irritability",
+            "stability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "focus",
+            "impulsivity"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "hope",
+            "fatigue"
+        ],
+        "disease": "Depression",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "safety",
+            "peace"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "calmness",
+            "emotional regulation"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 3
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "calm",
+            "patience"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "peace",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 3
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "fear",
+            "calmness",
+            "worry"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 17
+    },
+    {
+        "emotions": [
+            "tension",
+            "assurance",
+            "relaxation",
+            "restlessness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "happiness",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "calm",
+            "impulsivity",
+            "restlessness"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "sadness",
+            "balance",
+            "stability",
+            "mania"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "calmness",
+            "mood swings",
+            "emotional regulation"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "patience",
+            "frustration"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "obsession",
+            "comfort",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 29
+    },
+    {
+        "emotions": [
+            "sadness",
+            "balance",
+            "irritability",
+            "peace"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "frustration",
+            "focus",
+            "restlessness"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "irritability",
+            "mania",
+            "peace"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 36
+    },
+    {
+        "emotions": [
+            "fatigue",
+            "hope",
+            "hopelessness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "calmness",
+            "worry"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "anger",
+            "calmness"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 30
+    },
+    {
+        "emotions": [
+            "irritability",
+            "balance",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 24
+    },
+    {
+        "emotions": [
+            "peace",
+            "safety",
+            "anger",
+            "intrusive thoughts"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "patience"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "patience",
+            "restlessness",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 8
+    },
+    {
+        "emotions": [
+            "stability",
+            "sadness",
+            "mania",
+            "irritability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 33
+    },
+    {
+        "emotions": [
+            "fear",
+            "tension",
+            "relaxation"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "assurance",
+            "relaxation",
+            "calmness",
+            "fear"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "stability",
+            "sadness",
+            "balance"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "confusion",
+            "calmness",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 26
+    },
+    {
+        "emotions": [
+            "obsession",
+            "anxiety",
+            "comfort",
+            "frustration"
+        ],
+        "disease": "OCD",
+        "sessions_required": 24
+    },
+    {
+        "emotions": [
+            "worry",
+            "restlessness",
+            "assurance",
+            "fear"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 25
+    },
+    {
+        "emotions": [
+            "comfort",
+            "obsession"
+        ],
+        "disease": "OCD",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "paranoia",
+            "confusion",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 21
+    },
+    {
+        "emotions": [
+            "worry",
+            "restlessness",
+            "fear"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 23
+    },
+    {
+        "emotions": [
+            "confusion",
+            "stability",
+            "clarity"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "confusion",
+            "clarity",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "patience",
+            "focus",
+            "frustration"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "irritability",
+            "mania"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "patience",
+            "calm",
+            "focus"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 2
+    },
+    {
+        "emotions": [
+            "irritability",
+            "mania",
+            "peace"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 33
+    },
+    {
+        "emotions": [
+            "confusion",
+            "clarity",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 31
+    },
+    {
+        "emotions": [
+            "focus",
+            "impulsivity",
+            "patience"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "patience",
+            "impulsivity"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "peace",
+            "balance",
+            "stability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 1
+    },
+    {
+        "emotions": [
+            "stability",
+            "paranoia",
+            "delusions"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 39
+    },
+    {
+        "emotions": [
+            "tension",
+            "restlessness",
+            "relaxation"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 22
+    },
+    {
+        "emotions": [
+            "impulsivity",
+            "focus",
+            "calm",
+            "patience"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 21
+    },
+    {
+        "emotions": [
+            "paranoia",
+            "delusions",
+            "confusion"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 44
+    },
+    {
+        "emotions": [
+            "fear",
+            "calmness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "worry",
+            "assurance"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "fear"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "obsession"
+        ],
+        "disease": "OCD",
+        "sessions_required": 29
+    },
+    {
+        "emotions": [
+            "hope",
+            "happiness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 4
+    },
+    {
+        "emotions": [
+            "happiness",
+            "sadness",
+            "hope"
+        ],
+        "disease": "Depression",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "tension",
+            "relaxation",
+            "assurance",
+            "restlessness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "safety",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 3
+    },
+    {
+        "emotions": [
+            "delusions",
+            "paranoia",
+            "clarity",
+            "stability"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "relief",
+            "frustration",
+            "comfort"
+        ],
+        "disease": "OCD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "anger",
+            "peace",
+            "intrusive thoughts",
+            "fear"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 28
+    },
+    {
+        "emotions": [
+            "relief",
+            "emotional regulation",
+            "calmness"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 1
+    },
+    {
+        "emotions": [
+            "fatigue",
+            "happiness",
+            "hope",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 11
+    },
+    {
+        "emotions": [
+            "acceptance",
+            "frustration",
+            "anxiety"
+        ],
+        "disease": "OCD",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "mania",
+            "irritability",
+            "peace"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 16
+    },
+    {
+        "emotions": [
+            "calmness",
+            "worry",
+            "restlessness",
+            "tension"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "calmness",
+            "clarity"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 3
+    },
+    {
+        "emotions": [
+            "anger",
+            "peace",
+            "fear",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "fear",
+            "calmness",
+            "tension"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "delusions",
+            "confusion",
+            "stability",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "hopelessness",
+            "hope",
+            "sadness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 27
+    },
+    {
+        "emotions": [
+            "anxiety",
+            "frustration",
+            "comfort",
+            "acceptance"
+        ],
+        "disease": "OCD",
+        "sessions_required": 12
+    },
+    {
+        "emotions": [
+            "restlessness",
+            "frustration",
+            "calm"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 19
+    },
+    {
+        "emotions": [
+            "emotional regulation",
+            "anger",
+            "anxiety"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 18
+    },
+    {
+        "emotions": [
+            "balance",
+            "sadness"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 35
+    },
+    {
+        "emotions": [
+            "relief",
+            "calmness",
+            "anger"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "sadness",
+            "relief"
+        ],
+        "disease": "Depression",
+        "sessions_required": 8
+    },
+    {
+        "emotions": [
+            "relief",
+            "calmness",
+            "anger"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 15
+    },
+    {
+        "emotions": [
+            "assurance",
+            "calmness"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 1
+    },
+    {
+        "emotions": [
+            "worry",
+            "tension",
+            "calmness",
+            "assurance"
+        ],
+        "disease": "Anxiety Disorder",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "relief",
+            "mood swings",
+            "anxiety"
+        ],
+        "disease": "Borderline Personality",
+        "sessions_required": 40
+    },
+    {
+        "emotions": [
+            "clarity",
+            "delusions",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 45
+    },
+    {
+        "emotions": [
+            "delusions",
+            "stability"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 33
+    },
+    {
+        "emotions": [
+            "hope",
+            "sadness",
+            "hopelessness",
+            "fatigue"
+        ],
+        "disease": "Depression",
+        "sessions_required": 25
+    },
+    {
+        "emotions": [
+            "hope",
+            "sadness",
+            "hopelessness"
+        ],
+        "disease": "Depression",
+        "sessions_required": 5
+    },
+    {
+        "emotions": [
+            "hope",
+            "happiness",
+            "relief",
+            "fatigue"
+        ],
+        "disease": "Depression",
+        "sessions_required": 6
+    },
+    {
+        "emotions": [
+            "delusions",
+            "clarity",
+            "confusion",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 48
+    },
+    {
+        "emotions": [
+            "anger",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 13
+    },
+    {
+        "emotions": [
+            "peace",
+            "intrusive thoughts",
+            "resilience"
+        ],
+        "disease": "PTSD",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "obsession",
+            "anxiety",
+            "relief",
+            "comfort"
+        ],
+        "disease": "OCD",
+        "sessions_required": 10
+    },
+    {
+        "emotions": [
+            "peace",
+            "mania",
+            "balance",
+            "irritability"
+        ],
+        "disease": "Bipolar Disorder",
+        "sessions_required": 14
+    },
+    {
+        "emotions": [
+            "frustration",
+            "focus"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 7
+    },
+    {
+        "emotions": [
+            "clarity",
+            "calmness",
+            "stability",
+            "paranoia"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 20
+    },
+    {
+        "emotions": [
+            "paranoia",
+            "calmness"
+        ],
+        "disease": "Schizophrenia",
+        "sessions_required": 40
+    },
+    {
+        "emotions": [
+            "frustration",
+            "focus",
+            "impulsivity"
+        ],
+        "disease": "ADHD",
+        "sessions_required": 14
+    }
+]
