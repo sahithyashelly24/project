@@ -181,7 +181,7 @@ const ProfilePage = () => {
           {prediction !== null ? (
             <h4><strong>Predicted Sessions:</strong> {prediction}</h4> // ?? I changed here
           ) : (
-            <h4>Waiting for prediction...</h4> // ?? I changed here
+            <h4>Waiting for prediction...</h4> // ?? I changed hgitere
           )}
         </div>
       )}
