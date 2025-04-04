@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, useNavigate, Link } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
 import "./App.css";
 import ProfessionPage from "./Profession";
 import ProfilePage from "./ProfilePage";
@@ -28,7 +29,17 @@ const Home = ({ onStart, user }) => {
       {/* Navigation Bar */}
       <nav className="navbar">
         <h1>Cognitive Vox</h1>
-        <Link to="/profile">{user ? user.username : "Profile"}</Link>
+        {user ? (
+    <div className="user-display">
+      <FaUser className="user-icon" />
+      <span>{user.username}</span>
+    </div>
+  ) : (
+    <Link to="/profile" className="user-display clickable">
+      <FaUser className="user-icon" />
+      <span>User</span>
+    </Link>
+  )}
       </nav>
       
       <div className="headline-section">

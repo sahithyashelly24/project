@@ -58,7 +58,15 @@ const ProfilePage = () => {
 
     } catch (error) {
       console.error("Error uploading audio:", error);
+      setTranscript("Error transcribing the audio.");
+    } finally {
+      setIsLoading(false);
     }
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(transcript);
+    alert("Transcript copied!");
   };
 
 
@@ -101,16 +109,6 @@ const ProfilePage = () => {
       console.error("error analyzing emotions: ",e);
     }
   }
-      setTranscript("Error transcribing the audio.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(transcript);
-    alert("Transcript copied!");
-  };
 
   return (
     <div className="grid-container">
@@ -129,7 +127,6 @@ const ProfilePage = () => {
       <div className="audio-transcript-card">
         <div className="profile-audio-section">
           <input type="file" accept="audio/*" onChange={handleFileChange} className="rounded-input" />
-          <input type="file" accept="audio/*" onChange={handleFileChange} />
           <button onClick={handleFileUpload}>Upload Audio</button>
           {audioFile && <audio controls src={URL.createObjectURL(audioFile)} className="audio-player"></audio>}
           
