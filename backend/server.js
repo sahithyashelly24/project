@@ -176,3 +176,32 @@ app.delete("/api/clients/:id", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+// Save session data (audio analysis) for a client
+app.post("/api/clients/:id/session", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const sessionData = req.body; // Should contain { transcript, emotions, prediction, timestamp }
+
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ error: "Invalid ID format" });
+    }
+
+    const result = await collection.updateOne(
+      { _id: new ObjectId(id) },
+      {
+        $push: {
+          sessionHistory: sessionData,
+        },
+      }
+    );
+
+    if (result.modifiedCount > 0) {
+      res.json({ message: "Session added successfully" });
+    } else {
+      res.status(404).json({ error: "Client not found" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
 import { useParams } from "react-router-dom";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 import "./ProfileCard.css";
@@ -17,13 +18,17 @@ const ProfilePage = () => {
   const [showDetails, setShowDetails] = useState(false);
   const [emotions, setEmotions] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-    const [filePath, setFilePath] = useState("");
+  const [filePath, setFilePath] = useState("");
   const [prediction, setPrediction] = useState(null)
+  const [sessionHistory, setSessionHistory] = useState([]);
+
 
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/clients/${id}`)
-      .then((response) => setProfile(response.data))
+      .then((response) => {
+        setProfile(response.data);
+        setSessionHistory(response.data.sessionHistory || []);})
       .catch((error) => console.error("Error fetching client:", error));
   }, [id]);
 
@@ -105,6 +110,19 @@ const ProfilePage = () => {
   
       setPrediction(predictResponse.data.prediction);
 
+      const timestamp = new Date().toISOString();
+      const sessionData = {
+        transcript,
+        emotions: emotionsData,
+        prediction: predictResponse.data.prediction,
+        timestamp,
+      };
+
+      await axios.post(`http://localhost:5000/api/clients/${id}/session`, sessionData);
+
+      // Update local session history to re-render chart
+      setSessionHistory(prev => [...prev, sessionData]);
+
     }catch(e){
       console.error("error analyzing emotions: ",e);
     }
@@ -185,6 +203,24 @@ const ProfilePage = () => {
           )}
         </div>
       )}
+      {sessionHistory.length > 0 && (
+  <div className="prediction-graph-card">
+    <h3>Prediction Trend Over Time</h3>
+    <ResponsiveContainer width="100%" height={300}>
+      <LineChart data={sessionHistory.map(session => ({
+        timestamp: new Date(session.timestamp).toLocaleString(),
+        prediction: session.prediction
+      }))}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="timestamp" />
+        <YAxis domain={['auto', 'auto']} />
+        <Tooltip />
+        <Line type="monotone" dataKey="prediction" stroke="#82ca9d" />
+      </LineChart>
+    </ResponsiveContainer>
+  </div>
+)}
+
     </div>
   );
 };

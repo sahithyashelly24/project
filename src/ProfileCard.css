@@ -268,3 +268,12 @@
 .transcribe-btn:hover:hover {
   transform: scale(0.95); /* Slightly smaller on hover */
 }
+
+
+.prediction-graph-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
