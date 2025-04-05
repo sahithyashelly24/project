@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
 import { useParams } from "react-router-dom";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 import "./ProfileCard.css";
@@ -19,17 +20,21 @@ const ProfilePage = () => {
   const [isTranscribing, setIsTranscribing] = useState(false);
   const [filePath, setFilePath] = useState("");
   const [prediction, setPrediction] = useState(null);
+  const [sessionHistory, setSessionHistory] = useState([]);
   const [uploadStatus, setUploadStatus] = useState("");
+  const [isUploaded, setIsUploaded] = useState(false);
 
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/clients/${id}`)
-      .then((response) => setProfile(response.data))
+      .then((response) => {
+        setProfile(response.data);
+        setSessionHistory(response.data.sessionHistory || []);
+      })
       .catch((error) => console.error("Error fetching client:", error));
   }, [id]);
 
   if (!profile) {
-    console.log("Client ID:", id);
     return <h2>Loading!...</h2>;
   }
 
@@ -38,6 +43,7 @@ const ProfilePage = () => {
     if (file) {
       setAudioFile(file);
       setUploadStatus("");
+      setIsUploaded(false);
     }
   };
 
@@ -57,15 +63,11 @@ const ProfilePage = () => {
 
       setFilePath(response.data.file_path);
       setUploadStatus("✅ Audio uploaded successfully.");
+      setIsUploaded(true);
     } catch (error) {
       console.error("Error uploading audio:", error);
       setUploadStatus("❌ Failed to upload audio.");
     }
-  };
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(transcript);
-    alert("Transcript copied!");
   };
 
   const handleTranscribe = async () => {
@@ -77,9 +79,7 @@ const ProfilePage = () => {
     setIsTranscribing(true);
 
     try {
-      const response = await axios.post("http://localhost:8000/transcribe_audio", {
-        file_path: filePath,
-      });
+      const response = await axios.post("http://localhost:8000/transcribe_audio", { file_path: filePath });
       setTranscript(response.data.transcript);
     } catch (e) {
       console.error("Error transcribing the audio: ", e);
@@ -94,15 +94,11 @@ const ProfilePage = () => {
       alert("Please upload the audio file first.");
       return;
     }
-
     try {
-      const response = await axios.post("http://localhost:8000/analyze_emotions", {
-        file_path: filePath,
-      });
-
+      const response = await axios.post("http://localhost:8000/analyze_emotions", { file_path: filePath });
       const emotionsData = response.data;
-      const emotionNames = emotionsData.map((emotion) => emotion.name);
 
+      const emotionNames = emotionsData.map(emotion => emotion.name);
       setEmotions(emotionsData);
       setShowDetails(true);
 
@@ -112,14 +108,30 @@ const ProfilePage = () => {
       });
 
       setPrediction(predictResponse.data.prediction);
+
+      const timestamp = new Date().toISOString();
+      const sessionData = {
+        transcript,
+        emotions: emotionsData,
+        prediction: predictResponse.data.prediction,
+        timestamp,
+      };
+
+      await axios.post(`http://localhost:5000/api/clients/${id}/session`, sessionData);
+      setSessionHistory(prev => [...prev, sessionData]);
+
     } catch (e) {
       console.error("Error analyzing emotions: ", e);
     }
   };
 
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(transcript);
+    alert("Transcript copied!");
+  };
+
   return (
     <div className="grid-container">
-      {/* Profile Card */}
       <div className="cprofile-card">
         <div className="profile-image-container">
           <img src={profile.profilePic} alt="Profile" className="profile-image" />
@@ -131,7 +143,6 @@ const ProfilePage = () => {
         </div>
       </div>
 
-      {/* Audio Upload and Transcription */}
       <div className="audio-transcript-card">
         <div className="profile-audio-section">
           <input type="file" accept="audio/*" onChange={handleFileChange} className="rounded-input" />
@@ -143,9 +154,8 @@ const ProfilePage = () => {
           )}
         </div>
 
-        {/* Transcribe & Analyze Buttons (initially both shown) */}
         <div className="action-buttons">
-          <button onClick={handleTranscribe} disabled={!filePath || isTranscribing}>
+          <button onClick={handleTranscribe} disabled={!isUploaded || isTranscribing}>
             {transcript
               ? "🎧 Here is the transcribed audio"
               : isTranscribing
@@ -153,18 +163,11 @@ const ProfilePage = () => {
               : "Transcribe Audio"}
           </button>
 
-          {/* Only show Analyze Emotions up here if transcription NOT complete */}
-          {!transcript && (
-            <button onClick={handleAnalyzeEmotions} disabled={!filePath}>
-              Analyze Emotions
-            </button>
-          )}
+          <button onClick={handleAnalyzeEmotions} disabled={!isUploaded}>Analyze Emotions</button>
         </div>
 
-        {/* Loading bar */}
         {isTranscribing && <div className="loading-bar"></div>}
 
-        {/* Transcript display + Analyze Button shown BELOW after transcript */}
         {transcript && (
           <>
             <div className="ctranscript-box">
@@ -178,21 +181,10 @@ const ProfilePage = () => {
                 <p>{transcript}</p>
               </div>
             </div>
-
-            {/* Show "Analyze Emotions" under transcript AFTER transcribe */}
-            <button
-              onClick={handleAnalyzeEmotions}
-              disabled={!filePath}
-              className="show-details-btn"
-              style={{ marginTop: "15px" }}
-            >
-              Analyze Emotions
-            </button>
           </>
         )}
       </div>
 
-      {/* Emotion Analysis Card */}
       {showDetails && (
         <div className="emotion-analysis-card">
           <h3>Emotion Analysis</h3>
@@ -210,6 +202,24 @@ const ProfilePage = () => {
           ) : (
             <h4>Waiting for prediction...</h4>
           )}
+        </div>
+      )}
+
+      {sessionHistory.length > 0 && (
+        <div className="prediction-graph-card">
+          <h3>Prediction Trend Over Time</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={sessionHistory.map(session => ({
+              timestamp: new Date(session.timestamp).toLocaleString(),
+              prediction: session.prediction
+            }))}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="timestamp" />
+              <YAxis domain={['auto', 'auto']} />
+              <Tooltip />
+              <Line type="monotone" dataKey="prediction" stroke="#82ca9d" />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
       )}
     </div>
