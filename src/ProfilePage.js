@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+} from "recharts";
 import { useParams } from "react-router-dom";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 import "./ProfileCard.css";
@@ -23,6 +30,7 @@ const ProfilePage = () => {
   const [sessionHistory, setSessionHistory] = useState([]);
   const [uploadStatus, setUploadStatus] = useState("");
   const [isUploaded, setIsUploaded] = useState(false);
+  const [showPreviousRecords, setShowPreviousRecords] = useState(false);
 
   useEffect(() => {
     axios
@@ -79,7 +87,9 @@ const ProfilePage = () => {
     setIsTranscribing(true);
 
     try {
-      const response = await axios.post("http://localhost:8000/transcribe_audio", { file_path: filePath });
+      const response = await axios.post("http://localhost:8000/transcribe_audio", {
+        file_path: filePath,
+      });
       setTranscript(response.data.transcript);
     } catch (e) {
       console.error("Error transcribing the audio: ", e);
@@ -95,10 +105,12 @@ const ProfilePage = () => {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:8000/analyze_emotions", { file_path: filePath });
+      const response = await axios.post("http://localhost:8000/analyze_emotions", {
+        file_path: filePath,
+      });
       const emotionsData = response.data;
 
-      const emotionNames = emotionsData.map(emotion => emotion.name);
+      const emotionNames = emotionsData.map((emotion) => emotion.name);
       setEmotions(emotionsData);
       setShowDetails(true);
 
@@ -115,11 +127,11 @@ const ProfilePage = () => {
         emotions: emotionsData,
         prediction: predictResponse.data.prediction,
         timestamp,
+        audioUrl: URL.createObjectURL(audioFile), // for local audio playback
       };
 
       await axios.post(`http://localhost:5000/api/clients/${id}/session`, sessionData);
-      setSessionHistory(prev => [...prev, sessionData]);
-
+      setSessionHistory((prev) => [...prev, sessionData]);
     } catch (e) {
       console.error("Error analyzing emotions: ", e);
     }
@@ -221,6 +233,49 @@ const ProfilePage = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
+      )}
+
+      {sessionHistory.length > 0 && (
+        <>
+          <button
+            className="toggle-history-btn"
+            onClick={() => setShowPreviousRecords(prev => !prev)}
+          >
+            {showPreviousRecords ? "Hide Previous Records" : "Show Previous Records"}
+          </button>
+
+          {showPreviousRecords && (
+            <div className="previous-records-container">
+              {sessionHistory.map((session, index) => (
+                <div key={index} className="session-record-card">
+                  <h4>Session {index + 1} - {new Date(session.timestamp).toLocaleString()}</h4>
+
+                  {session.audioUrl && (
+                    <audio controls src={session.audioUrl} className="audio-player" />
+                  )}
+
+                  <div className="session-transcript">
+                    <strong>Transcript:</strong>
+                    <p>{session.transcript}</p>
+                  </div>
+
+                  <div className="session-emotions">
+                    <strong>Recognized Emotions:</strong>
+                    <ul>
+                      {session.emotions.map((emotion, i) => (
+                        <li key={i}>{emotion.name}: {emotion.value}%</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="session-prediction">
+                    <strong>Predicted Sessions:</strong> {session.prediction}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
       )}
     </div>
   );
