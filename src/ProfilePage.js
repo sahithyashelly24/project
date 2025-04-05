@@ -7,9 +7,10 @@ import {
   YAxis,
   CartesianGrid,
   ResponsiveContainer,
+  Tooltip,
 } from "recharts";
 import { useParams } from "react-router-dom";
-import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
+import { PieChart, Pie, Cell, Legend } from "recharts";
 import "./ProfileCard.css";
 
 const generateColor = (index) => {
@@ -52,6 +53,8 @@ const ProfilePage = () => {
       setAudioFile(file);
       setUploadStatus("");
       setIsUploaded(false);
+      setTranscript("");
+      setShowDetails(false);
     }
   };
 
@@ -127,7 +130,7 @@ const ProfilePage = () => {
         emotions: emotionsData,
         prediction: predictResponse.data.prediction,
         timestamp,
-        audioUrl: URL.createObjectURL(audioFile), // for local audio playback
+        audioUrl: URL.createObjectURL(audioFile),
       };
 
       await axios.post(`http://localhost:5000/api/clients/${id}/session`, sessionData);
@@ -167,33 +170,47 @@ const ProfilePage = () => {
         </div>
 
         <div className="action-buttons">
-          <button onClick={handleTranscribe} disabled={!isUploaded || isTranscribing}>
-            {transcript
-              ? "🎧 Here is the transcribed audio"
-              : isTranscribing
-              ? "Transcribing..."
-              : "Transcribe Audio"}
-          </button>
-
-          <button onClick={handleAnalyzeEmotions} disabled={!isUploaded}>Analyze Emotions</button>
+          {!transcript ? (
+            <>
+              <button
+                onClick={handleTranscribe}
+                disabled={!isUploaded || isTranscribing}
+              >
+                {isTranscribing ? "Transcribing..." : "Transcribe Audio"}
+              </button>
+              <button
+                onClick={handleAnalyzeEmotions}
+                disabled={!isUploaded}
+              >
+                Analyze Emotions
+              </button>
+            </>
+          ) : (
+            <>
+              <button disabled>
+                🎧 Here is the transcribed audio
+              </button>
+              <button onClick={handleAnalyzeEmotions}>
+                Analyze Emotions
+              </button>
+            </>
+          )}
         </div>
 
         {isTranscribing && <div className="loading-bar"></div>}
 
         {transcript && (
-          <>
-            <div className="ctranscript-box">
-              <div className="transcript-header">
-                <h4>Transcript:</h4>
-                <span className="copy-icon" onClick={copyToClipboard} title="Copy to Clipboard">
-                  📄
-                </span>
-              </div>
-              <div className="transcript-content">
-                <p>{transcript}</p>
-              </div>
+          <div className="ctranscript-box">
+            <div className="transcript-header">
+              <h4>Transcript:</h4>
+              <span className="copy-icon" onClick={copyToClipboard} title="Copy to Clipboard">
+                📄
+              </span>
             </div>
-          </>
+            <div className="transcript-content">
+              <p>{transcript}</p>
+            </div>
+          </div>
         )}
       </div>
 
@@ -216,36 +233,34 @@ const ProfilePage = () => {
           )}
         </div>
       )}
-
       {sessionHistory.length > 0 && (
-        <div className="prediction-graph-card">
-          <h3>Prediction Trend Over Time</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={sessionHistory.map(session => ({
-              timestamp: new Date(session.timestamp).toLocaleString(),
-              prediction: session.prediction
-            }))}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="timestamp" />
-              <YAxis domain={['auto', 'auto']} />
-              <Tooltip />
-              <Line type="monotone" dataKey="prediction" stroke="#82ca9d" />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-      )}
+        <div className="graph-and-history">
+          <div className="prediction-graph-card centered-graph">
+            <h3>Prediction Trend Over Time</h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <LineChart data={sessionHistory.map(session => ({
+                timestamp: new Date(session.timestamp).toLocaleString(),
+                prediction: session.prediction
+              }))}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="timestamp" />
+                <YAxis domain={['auto', 'auto']} />
+                <Tooltip />
+                <Line type="monotone" dataKey="prediction" stroke="#82ca9d" />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
 
-      {sessionHistory.length > 0 && (
-        <>
           <button
             className="toggle-history-btn"
             onClick={() => setShowPreviousRecords(prev => !prev)}
+            style={{ marginTop: "20px" }}
           >
             {showPreviousRecords ? "Hide Previous Records" : "Show Previous Records"}
           </button>
 
           {showPreviousRecords && (
-            <div className="previous-records-container">
+            <div className="previous-records-container" style={{ marginTop: "20px" }}>
               {sessionHistory.map((session, index) => (
                 <div key={index} className="session-record-card">
                   <h4>Session {index + 1} - {new Date(session.timestamp).toLocaleString()}</h4>
@@ -275,9 +290,10 @@ const ProfilePage = () => {
               ))}
             </div>
           )}
-        </>
+        </div>
       )}
-    </div>
+
+  </div>
   );
 };
 
