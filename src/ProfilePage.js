@@ -233,8 +233,9 @@ const ProfilePage = () => {
           )}
         </div>
       )}
+
       {sessionHistory.length > 0 && (
-        <div className="graph-and-history">
+        <>
           <div className="prediction-graph-card centered-graph">
             <h3>Prediction Trend Over Time</h3>
             <ResponsiveContainer width="100%" height={300}>
@@ -251,49 +252,52 @@ const ProfilePage = () => {
             </ResponsiveContainer>
           </div>
 
-          <button
-            className="toggle-history-btn"
-            onClick={() => setShowPreviousRecords(prev => !prev)}
-            style={{ marginTop: "20px" }}
-          >
-            {showPreviousRecords ? "Hide Previous Records" : "Show Previous Records"}
-          </button>
+          <div className="previous-records-card">
+            <button
+              className="toggle-history-btn"
+              onClick={() => setShowPreviousRecords(prev => !prev)}
+              style={{ marginTop: "20px" }}
+            >
+              {showPreviousRecords ? "Hide Previous Records" : "Show Previous Records"}
+            </button>
 
-          {showPreviousRecords && (
-            <div className="previous-records-container" style={{ marginTop: "20px" }}>
-              {sessionHistory.map((session, index) => (
-                <div key={index} className="session-record-card">
-                  <h4>Session {index + 1} - {new Date(session.timestamp).toLocaleString()}</h4>
-
-                  {session.audioUrl && (
-                    <audio controls src={session.audioUrl} className="audio-player" />
-                  )}
-
-                  <div className="session-transcript">
-                    <strong>Transcript:</strong>
-                    <p>{session.transcript}</p>
-                  </div>
-
-                  <div className="session-emotions">
-                    <strong>Recognized Emotions:</strong>
-                    <ul>
-                      {session.emotions.map((emotion, i) => (
-                        <li key={i}>{emotion.name}: {emotion.value}%</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="session-prediction">
-                    <strong>Predicted Sessions:</strong> {session.prediction}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+            {showPreviousRecords && (
+              <div className="previous-records-container">
+                <table className="records-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Timestamp</th>
+                      <th>Transcript</th>
+                      <th>Emotions</th>
+                      <th>Prediction</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sessionHistory.map((session, index) => (
+                      <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{new Date(session.timestamp).toLocaleString()}</td>
+                        <td className="transcript-cell">{session.transcript}</td>
+                        <td>
+                          {session.emotions.map((emotion, i) => (
+                            <span key={i}>
+                              {emotion.name}
+                              {i < session.emotions.length - 1 ? ", " : ""}
+                            </span>
+                          ))}
+                        </td>
+                        <td>{session.prediction}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        </>
       )}
-
-  </div>
+    </div>
   );
 };
 
