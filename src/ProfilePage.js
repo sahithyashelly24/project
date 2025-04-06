@@ -236,7 +236,7 @@ const ProfilePage = () => {
 
       {sessionHistory.length > 0 && (
         <>
-          <div className="prediction-graph-card centered-graph">
+          <div className="prediction-graph-card">
             <h3>Prediction Trend Over Time</h3>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={sessionHistory.map(session => ({

@@ -3,9 +3,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr;
-  gap: 50px;
+  gap: 40px;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   margin: 0 auto;
   background-color: whitesmoke;
 }
@@ -110,7 +110,7 @@
   padding: 30px;
   color: white;
   height: 350px;
-  margin-right: 50px;
+  margin-right: 45px;
   font-size: 20px;
   transition: transform 0.3s ease-in-out;
 }
@@ -214,15 +214,26 @@ button {
 
 
 .prediction-graph-card {
-  background: white;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2f2d2d;
+  border-radius: 10px;
+  padding: 25px;
+  color: white;
+  height: 350px;
+  margin-left: 49px;
+  width: 80%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.prediction-graph-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 /* History */
-.toggle-history-btn {
+/*.toggle-history-btn {
   margin-top: 20px;
   padding: 10px 18px;
   background-color: #4caf50;
@@ -231,20 +242,9 @@ button {
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-}
+}*/
 
-.previous-records-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 12px;
-  max-height: 400px;
-  overflow: auto;
-  padding-left: 25px; /* Add or reduce this value as needed */
-  margin-left: 15px;
-}
+
 
 .session-record-card {
   background-color: #f3f3f3;
@@ -291,7 +291,7 @@ button:hover:not(:disabled) {
   margin-top: 20px;
 }
 
-.toggle-history-btn {
+/*.toggle-history-btn {
   margin-top: 20px;
   padding: 10px 20px;
   font-weight: bold;
@@ -300,9 +300,10 @@ button:hover:not(:disabled) {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-}
+}*/
 .records-table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0 10px; 
   width: 100%;
   max-width: 1200px;
   margin: auto;
@@ -310,13 +311,6 @@ button:hover:not(:disabled) {
   color: white;
   border: 3px solid black;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* outer border */
-}
-
-.records-table th,
-.records-table td {
-  border: none; /* removes internal lines */
-  padding: 10px;
-  text-align: left;
 }
 
 .records-table tr {
@@ -372,3 +366,51 @@ button:hover:not(:disabled) {
   border-radius: 10px;
   border: 1px solid #aaa;
 }
+
+/* Previous Records Card */
+.previous-records-card {
+  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #2f2d2d;
+  border-radius: 10px;
+  padding: 30px;
+  color: white;
+  height: 350px;
+  margin: 0 50px;
+  transition: transform 0.3s ease-in-out;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+
+.previous-records-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+
+.transcript-cell {
+  max-width: 200px;
+  overflow-x: auto;
+  word-break: break-word;
+}
+
+.toggle-history-btn {
+  background-color: #444;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-history-btn:hover {
+  background-color: #666;
+}
+
