@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./profession.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 
 const dp = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
-const videoBg = "https://videos.pexels.com/video-files/1918465/1918465-uhd_2560_1440_24fps.mp4"; // Replace with your video URL
 
 const Profession = () => {
   const [sections, setSections] = useState([]);
@@ -79,10 +78,10 @@ const Profession = () => {
 
   return (
     <div className="profession-wrapper">
-      <video autoPlay loop muted className="profession-video">
-        <source src={videoBg} type="video/mp4" />
-      </video>
-
+      <nav className="navbar">
+          <Link to="/" className="nav-left">Home</Link>
+          <h1 className="nav-center">Cognitive Vox</h1>
+      </nav>
       <div className="profession-container">
         <div className="profession-header">
           <h2>My Clients</h2>

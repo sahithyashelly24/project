@@ -58,14 +58,14 @@
 .new-card {
   position: absolute;
   left: 700px; /* Adjust to space the new card */
-  top: 55%; /* Align with the previous card */
+  top: 50%; /* Align with the previous card */
   z-index: 2;
   background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent */
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   width: 300px; /* Fixed width */
-  margin-left: 20%; /* Space between the new card and previous card */
+  margin-left: 15%; /* Space between the new card and previous card */
 }
 
 .new-card h2 {
@@ -214,30 +214,31 @@ body {
 }
 
 .feature-card {
-  background: white;
+  background: #2f2d2d;
   padding: 20px;
   width: 250px;
   border-radius: 8px;
-  box-shadow: 0px 5px 5px  rgb(29 28 28 / 38%);;
+  box-shadow: 0px 10px 10px  rgba(7, 6, 6, 0.38);;
 }
 
 .feature-card:hover {
   transform: translate(8px, 8px); /* Moves diagonally at 45 degrees */
-  border-color: black; /* Changes border to dark black */
+  border-color:whitesmoke; /* Changes border to dark black */
 }
 
 .feature-card h3 {
-  color:black;
+  color:whitesmoke;
   font-size: 20px;
 }
 
 .feature-card p {
-  color: #666;
+  color: whitesmoke;
 }
 
 /* Trusted Section */
 .trust {
   margin: 40px 0;
+  
 }
 
 .trust h2 {
@@ -253,7 +254,7 @@ body {
 }
 
 .testimonial {
-  background: white;
+  background: #2f2d2d;
   padding: 15px;
   width: 250px;
   border-radius: 8px;
@@ -266,13 +267,13 @@ body {
 }
 
 .testimonial p {
-  color: #666;
+  color: whitesmoke;
   font-style: italic;
 }
 
 .testimonial h4 {
   margin-top: 10px;
-  color:black;
+  color:whitesmoke;
 }
 
 /* Call to Action */
@@ -284,21 +285,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 14px; /* smaller height */
+  padding: 8px 10px; /* smaller height */
   height: 30px; /* thin height */
-  background-color: black;
+  background-color: #2f2d2d;
   width: 90vw; /* full width of the viewport */
   position: fixed; /* keep it stuck at top */
   top: 0;
-  left: 0;
+  margin-right: 10px;
   z-index: 1000;
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  color:Whitesmoke;
+  box-shadow: 0px 1px 5px #2f2d2d;
 }
 
 .user-display {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: white;
   font-weight: 500;
   font-size: 16px;

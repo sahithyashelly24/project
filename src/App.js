@@ -37,7 +37,7 @@ const Home = ({ onStart, user }) => {
   ) : (
     <Link to="/profile" className="user-display clickable">
       <FaUser className="user-icon" />
-      <span>User</span>
+      <pre><span>User   </span></pre>
     </Link>
   )}
       </nav>
@@ -50,8 +50,7 @@ const Home = ({ onStart, user }) => {
           </video>
         </div>
         <header className="headline">
-          <h1>Cognitive Vox</h1>
-          <p>Smart Psychiatry, Simplified!</p>
+          <h2>Smart Psychiatry, Simplified!</h2>
         </header>
         <div className="card">
           <h2>What name feels right for you?</h2>

@@ -14,13 +14,15 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 350px;
-    margin-top: 20px;
+    width: 550px;
+    height:300px;
+    margin-top: 80px;
+    background-color: #2f2d2d;
   }
   
   .auth-title {
     margin-bottom: 1rem;
-    color: #333;
+    color: whitesmoke;
   }
   
   .auth-error {

@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import { PieChart, Pie, Cell, Legend } from "recharts";
 import "./ProfileCard.css";
 
@@ -147,6 +147,10 @@ const ProfilePage = () => {
 
   return (
     <div className="grid-container">
+      <nav className="navbar">
+          <Link to="/" className="nav-left">Home</Link>
+          <h1 className="nav-center">Cognitive Vox</h1>
+      </nav>
       <div className="cprofile-card">
         <div className="profile-image-container">
           <img src={profile.profilePic} alt="Profile" className="profile-image" />

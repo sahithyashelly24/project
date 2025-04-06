@@ -19,10 +19,11 @@
 .profession-container {
     width: 80%;
     margin: 40px auto;
+    margin-top: 70px;
     text-align: center;
     font-family: 'Arial', sans-serif;
-    background-color: rgba(20, 20, 20, 0.9); /* Dark theme background */
-    color: white;
+    background-color: #2f2d2d; /* Dark theme background */
+    color: whitesmoke;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);

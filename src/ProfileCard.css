@@ -20,7 +20,8 @@
   border-radius: 10px;
   padding: 20px;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  margin-top: 90px;
 }
 
 .profile-image-container {
@@ -38,7 +39,8 @@
 }
 
 .profile-details:hover {
-  background: #945d8f;
+  background: whitesmoke;
+  color:#2f2d2d;
   font-size: 22px;
   border-radius: 15px;
   transition: all 0.3s ease-in-out;
