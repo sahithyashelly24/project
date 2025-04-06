@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate,Link } from "react-router-dom";
 import "./authu.css";
+import { Home } from "lucide-react";
 
 const generateCaptcha = () => {
   return Math.random().toString(36).substring(2, 8).toUpperCase();
@@ -76,7 +77,7 @@ const Authu = ({ setUser }) => {
   return (
     <div className="auth-container">
       <nav className="navbar">
-        <Link to="/" className="nav-left">Home</Link>
+      <Link to="/" className="nav-left"><Home size={24} strokeWidth={3} /></Link>
         <h1 className="nav-center">Cognitive Vox</h1>
       </nav>
       <div className="auth-card">

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./profession.css";
 import { useNavigate,Link } from "react-router-dom";
+import { Home } from "lucide-react";
 
 const dp = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
 
@@ -79,7 +80,7 @@ const Profession = () => {
   return (
     <div className="profession-wrapper">
       <nav className="navbar">
-          <Link to="/" className="nav-left">Home</Link>
+        <Link to="/" className="nav-left"><Home size={24} strokeWidth={3} /></Link>
           <h1 className="nav-center">Cognitive Vox</h1>
       </nav>
       <div className="profession-container">

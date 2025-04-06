@@ -12,6 +12,7 @@ import {
 import { useParams, Link } from "react-router-dom";
 import { PieChart, Pie, Cell, Legend } from "recharts";
 import "./ProfileCard.css";
+import { Home } from "lucide-react";
 
 const generateColor = (index) => {
   const hue = (index * 137) % 360;
@@ -148,7 +149,7 @@ const ProfilePage = () => {
   return (
     <div className="grid-container">
       <nav className="navbar">
-        <Link to="/" className="nav-left">Home</Link>
+        <Link to="/" className="nav-left"><Home size={24} strokeWidth={3} /></Link>
         <h1 className="nav-center">Cognitive Vox</h1>
       </nav>
       <div className="cprofile-card">
@@ -161,7 +162,6 @@ const ProfilePage = () => {
           <p><strong>Status:</strong> {profile.status}</p>
         </div>
       </div>
-
       <div className="audio-transcript-card">
         <div className="profile-audio-section">
           <input type="file" accept="audio/*" onChange={handleFileChange} className="rounded-input" />
