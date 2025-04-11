@@ -67,10 +67,12 @@ def predict_emotions_from_image(model, img, classes):
     
     return json.dumps(overall_emotions, indent=4)
 
+import random
+
 def predict_emotions(audio_path):
     model = ViTEmotionModel(num_classes=10)
     classes = [
-        "Anger", "Anxiety", "Balance", "Sadness", "Relief", "Calmness", "Assurance", "Worry",
+        'happy',"calmness", "Anxiety","Hope","anger", "Balance", "Sadness", "Relief", "Assurance", "Worry",
         "Tension", "Mood Swings", "Clarity", "Delusions", "Paranoia", "Stability", "Hope",
         "Hopelessness", "Fatigue", "Confusion", "Resilience", "Peace", "Intrusive Thoughts",
         "Obsession", "Comfort", "Mania", "Irritability", "Frustration", "Focus", "Impulsivity"
@@ -87,11 +89,18 @@ def predict_emotions(audio_path):
             overall_emotions[emotion] = overall_emotions.get(emotion, 0) + percent
 
     # Normalize and ensure numeric output
-    total_percent = sum(overall_emotions.values()) or 1  # Prevent division by zero
-    formatted_emotions = [
-        {"name": emotion, "value": round((overall_emotions[emotion] / total_percent) * 100, 2)}
-        for emotion in overall_emotions
+    total_percent = sum(overall_emotions.values()) or 1
+    normalized_emotions = [
+        {"name": emotion, "value": round((percent / total_percent) * 100, 2)}
+        for emotion, percent in overall_emotions.items()
     ]
 
-    return formatted_emotions
+    # Sort by percentage descending
+    normalized_emotions.sort(key=lambda x: x['value'], reverse=True)
+
+    # Choose random top n where 3 < n < 6
+    n = random.randint(4, 5)
+    top_n_emotions = normalized_emotions[:n]
+
+    return top_n_emotions
 

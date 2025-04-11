@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Playfair+Display:wght@600&display=swap');
 /* Background Video Styling */
+
 .profession-video {
     position: fixed;
     top: 0;
@@ -21,9 +23,9 @@
     margin: 40px auto;
     margin-top: 70px;
     text-align: center;
-    font-family: 'Arial', sans-serif;
-    background-color: #2f2d2d; /* Dark theme background */
-    color: whitesmoke;
+    font-family: 'Playfair Display';
+    background-color: #efdfdf; 
+    color: #333;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
@@ -58,14 +60,14 @@
 .profession-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #333;
+    background-color:white;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.1);
 }
 
 .profession-table th {
-    background-color: rgba(0, 123, 255, 0.8);
+    background-color: rgb(59 105 155 / 80%);
     color: white;
     padding: 14px;
     font-size: 16px;
@@ -74,14 +76,14 @@
 
 .profession-table td {
     padding: 12px;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px rgba(255, 255, 255, 0.9);
     text-align: center;
     font-size: 14px;
-    color: white;
+    color: black;
 }
 
 .profession-row:hover {
-    background-color: #444;
+    background-color: #f6e2e2;
 }
 
 /* Profile Image */
@@ -92,8 +94,8 @@
 }
 
 .profession-profile img {
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 60px;
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
@@ -117,12 +119,12 @@
     border-bottom: 2px solid #888;
     background: transparent;
     text-align: center;
-    color: white;
+    color: #333;
     transition: border-color 0.3s ease;
 }
 
 .profession-input:focus {
-    border-color: rgba(0, 123, 255, 0.7);
+    border-color: rgb(59 105 155 / 80%);
     outline: none;
 }
 
@@ -134,7 +136,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    background-color: rgba(0, 123, 255, 0.2);
+    background-color:rgb(59 105 155 / 80%);
     color: white;
 }
 

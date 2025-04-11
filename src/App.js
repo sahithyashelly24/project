@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, useNavigate, Link } from "react-router-dom";
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaHome,FaRobot,FaRegCalendarAlt ,FaChartArea } from "react-icons/fa";
 import "./App.css";
 import ProfessionPage from "./Profession";
 import ProfilePage from "./ProfilePage";
@@ -28,7 +28,9 @@ const Home = ({ onStart, user }) => {
     <div className="container">
       {/* Navigation Bar */}
       <nav className="navbar">
-        <h1>Cognitive Vox</h1>
+      <div className="home-icon">
+          <FaHome size={24} />
+        </div>
         {user ? (
     <div className="user-display">
       <FaUser className="user-icon" />
@@ -37,7 +39,7 @@ const Home = ({ onStart, user }) => {
   ) : (
     <Link to="/profile" className="user-display clickable">
       <FaUser className="user-icon" />
-      <pre><span>User   </span></pre>
+      <pre><span>User           </span></pre>
     </Link>
   )}
       </nav>
@@ -45,11 +47,12 @@ const Home = ({ onStart, user }) => {
       <div className="headline-section">
         <div className="background-video">
           <video autoPlay muted loop playsInline>
-            <source src="https://videos.pexels.com/video-files/8428331/8428331-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+            <source src="https://media.istockphoto.com/id/1395917168/video/a-young-woman-having-a-therapy-session-with-a-psychologist-a-patient-talking-with-a-therapist.mp4?s=mp4-640x640-is&k=20&c=p7OFlSTA8gYWhJPAug3BW8NKpXLOoA0st-osRCuDuQg=" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
         <header className="headline">
+          <h1>CognitiveVox</h1>
           <h2>Smart Psychiatry, Simplified!</h2>
         </header>
         <div className="card">
@@ -72,14 +75,17 @@ const Home = ({ onStart, user }) => {
         <div className="feature-grid">
           <div className="feature-card">
             <h3>AI-Powered</h3>
+            <FaRobot size={40} color="white" style={{ marginBottom: '10px' }} />
             <p>Get AI-powered insights into your patients' emotions</p>
           </div>
           <div className="feature-card">
             <h3>Conversational & Engaging</h3>
+            <FaRegCalendarAlt size={40} color="white" style={{ marginBottom: '10px' }} />
             <p>Make informed decisions about therapy needs.</p>
           </div>
           <div className="feature-card">
             <h3>Personalized Insights</h3>
+            <FaChartArea size={40} color="white"  style={{ marginBottom: '10px' }} />
             <p>Always here to help you.</p>
           </div>
         </div>

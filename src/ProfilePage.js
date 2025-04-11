@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  ResponsiveContainer,
-  Tooltip,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,LineChart ,Line} from "recharts";
 import { useParams, Link } from "react-router-dom";
-import { PieChart, Pie, Cell, Legend } from "recharts";
 import "./ProfileCard.css";
 import { Home } from "lucide-react";
 
@@ -146,6 +137,17 @@ const ProfilePage = () => {
     alert("Transcript copied!");
   };
 
+  const darkColors = [
+    "#2c3e50", // dark blue-gray
+    "#34495e", // dark gray-blue
+    "#7f8c8d", // gray
+    "#8e44ad", // dark purple
+    "#2d3436", // charcoal
+    "#1e272e", // near-black navy
+    "#3b3b98", // dark indigo
+    "#6c5ce7", // vibrant dark violet
+  ];
+
   return (
     <div className="grid-container">
       <nav className="navbar">
@@ -221,15 +223,22 @@ const ProfilePage = () => {
       {showDetails && (
         <div className="emotion-analysis-card">
           <h3>Emotion Analysis</h3>
-          <PieChart width={300} height={300}>
-            <Pie data={emotions} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" dataKey="value">
-              {emotions.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={generateColor(index)} />
-              ))}
-            </Pie>
-            <Tooltip />
-            <Legend />
-          </PieChart>
+          <ResponsiveContainer width="100%" height={300}>
+  <BarChart data={emotions} margin={{ top: 10, right: 30, left: 0, bottom: 5 }}>
+    <CartesianGrid strokeDasharray="3 3" />
+    <XAxis dataKey="name" />
+    <YAxis />
+    <Tooltip />
+    <Bar dataKey="value" barSize={10}>
+      {emotions.map((entry, index) => (
+        <Cell
+          key={`cell-${index}`}
+          fill={darkColors[index % darkColors.length]}
+        />
+      ))}
+    </Bar>
+  </BarChart>
+</ResponsiveContainer>
           {prediction !== null ? (
             <h4><strong>Predicted Sessions:</strong> {prediction}</h4>
           ) : (
@@ -251,7 +260,7 @@ const ProfilePage = () => {
                 <XAxis dataKey="timestamp" />
                 <YAxis domain={['auto', 'auto']} />
                 <Tooltip />
-                <Line type="monotone" dataKey="prediction" stroke="#82ca9d" />
+                <Line type="monotone" dataKey="prediction" stroke="black"   />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -272,7 +281,7 @@ const ProfilePage = () => {
                     <tr>
                       <th>#</th>
                       <th>Timestamp</th>
-                      <th>Transcript</th>
+                      <th>Audio</th>
                       <th>Emotions</th>
                       <th>Prediction</th>
                     </tr>
@@ -282,7 +291,7 @@ const ProfilePage = () => {
                       <tr key={index}>
                         <td>{index + 1}</td>
                         <td>{new Date(session.timestamp).toLocaleString()}</td>
-                        <td className="transcript-cell">{session.transcript}</td>
+                        <td ><audio controls src={session.audioUrl} style={{ width: "600px" }} /></td>
                         <td>
                           {session.emotions.map((emotion, i) => (
                             <span key={i}>

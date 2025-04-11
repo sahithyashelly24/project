@@ -7,7 +7,7 @@
   width: 100vw;
   height: auto;
   margin: 0 auto;
-  background-color: rgb(239, 195, 191);
+  background-color: rgb(240 226 224);
 }
 
 /* Profile Card */
@@ -16,12 +16,12 @@
   align-items: center;
   justify-content: center;
   width: 201%;
-  background: #2f2d2d;
-  border-radius: 10px;
+  background: #39597c;
+  border-radius: 1px;
   padding: 20px;
   color: white;
   margin-bottom: 5px;
-  margin-top: 90px;
+  margin-top: 51px;
 }
 
 .profile-image-container {
@@ -53,10 +53,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #2f2d2d;
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   padding: 30px;
-  color: white;
+  color: black;
   height: 350px;
   margin-left: 50px;
   transition: transform 0.3s ease-in-out;
@@ -74,7 +74,7 @@
 
 /* Transcript Box */
 .ctranscript-box {
-  background: #333;
+  background:white;
   padding: 10px;
   border-radius: 5px;
   margin-top: 15px;
@@ -106,10 +106,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #2f2d2d;
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   padding: 30px;
-  color: white;
+  color: black;
   height: 350px;
   margin-right: 45px;
   font-size: 20px;
@@ -133,10 +133,10 @@
   padding: 10px;
   border: 2px solid white;
   border-radius: 8px;
-  background: #444;
+  background: #3246a4;
   color: white;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .profile-audio-section input[type="file"]:hover {
@@ -162,7 +162,7 @@ button {
 .transcribe-btn:hover,
 .copy-btn:hover,
 .show-details-btn:hover {
-  background-color: #0b6fc7;
+  background-color: rgb(59 105 155 / 80%);
 }
 
 .rounded-btn {
@@ -219,10 +219,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #2f2d2d;
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   padding: 25px;
-  color: white;
+  color:black;
   height: 350px;
   width: 91%;
   margin-left: 49px;
@@ -241,12 +241,12 @@ button {
 }
 
 button:disabled {
-  background-color: lightblue !important;
+  background-color: rgb(62, 81, 87) !important;
   cursor: not-allowed;
 }
 
 button {
-  background-color: #004aad;
+  background-color: rgb(59 105 155 / 80%);
   color: white;
   border: none;
   padding: 10px 15px;
@@ -257,7 +257,7 @@ button {
 }
 
 button:hover:not(:disabled) {
-  background-color: #00327a;
+  background-color: #1e3352;
 }
 
 .centered-graph {
@@ -288,20 +288,22 @@ button:hover:not(:disabled) {
   border-collapse: separate;
   border-spacing: 0 10px; 
   width: 100%;
-  max-width: 1200px;
+  max-width: 1700px;
   margin: auto;
-  background-color: #333; /* dark grey */
+  background-color: #d2cde8; /* dark grey */
   color: white;
-  border: 3px solid black;
+  border: 2px solid black;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* outer border */
 }
 
 .records-table tr {
   border-bottom: none;
+  font-family: 'Segoe UI';
+  color: black;
 }
 
 .records-table th {
-  background-color: #444;
+  background-color: #4a5083;
 }
 
 .records-table td.transcript-cell {
@@ -312,7 +314,7 @@ button:hover:not(:disabled) {
   white-space: pre-wrap;
   word-break: break-word;
   display: block;
-  background-color: #333;
+  background-color: rgb(210 205 232);
 }
 
 /* Stylish scrollbar for WebKit browsers (Chrome, Edge, Safari) */
@@ -357,10 +359,10 @@ button:hover:not(:disabled) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #2f2d2d;
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   padding: 30px;
-  color: white;
+  color: black;
   height: 350px;
   width:90%;
   margin: 0 50px;
