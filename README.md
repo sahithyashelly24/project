@@ -1,12 +1,12 @@
-# 🧠 Cognitive Vox
+# Cognitive Vox
 
-> An intelligent audio analysis system to detect emotions and predict therapy needs — built with deep learning and care.
+> An intelligent audio analysis system helpful to the psychiatrist for managing patient data and using AI based emotion detection and predict therapy needs — built with deep learning and Transformers.
 
----
 
-## 📌 About the Project
 
-**Cognitive Vox** is a voice-based emotional analysis and therapy prediction system. Users can upload or record their voice, and the app will:
+## About the Project
+
+**Cognitive Vox** is a voice-based emotional analysis and therapy prediction system. Users can upload or record their patients voice, and the app will:
 
 1. **Transcribe** the audio using Whisper.
 2. **Analyze emotions** using a Vision Transformer (ViT) trained on spectrograms.
@@ -15,26 +15,25 @@
 
 This project is designed to assist in mental health awareness and provide helpful insights from just a voice sample.
 
----
 
-## 🧭 Architecture Overview
+
+## Architecture Overview
 
 ![System Architecture](./assets/cognitive_vox_architecture.png)
 
 > The above diagram shows the complete pipeline — from audio input to transcription, emotion classification, and therapy prediction — built with FastAPI and machine learning models.
 
----
 
-## ✨ Features
 
-- 🎤 **Audio Input**: Upload or record voice.
-- 🧠 **Emotion Detection**: Classifies emotions like Happy, Sadness, Anger, Anxiety, etc.
-- 📃 **Speech Transcription**: Converts speech to text using Whisper.
-- 🔮 **Therapy Prediction**: Estimates how many sessions a user may need.
-- 📊 **Emotion History Tracking**: Visual display of progress over time.
-- 👩‍⚕️ **Personalized Analysis**: Takes user’s gender and age into account for predictions.
+## Features
 
----
+-  **Audio Input**: Upload or record voice.
+-  **Emotion Detection**: Classifies emotions like Happy, Sadness, Anger, Anxiety, etc.
+-  **Speech Transcription**: Converts speech to text using Whisper.
+-  **Therapy Prediction**: Estimates how many sessions a user may need.
+-  **Emotion History Tracking**: Visual display of progress over time.
+-  **Data Management and Safety**: Takes login and data isolation for each different login and stored in Database.
+
 
 ## 🛠 Tech Stack
 
@@ -44,13 +43,14 @@ This project is designed to assist in mental health awareness and provide helpfu
 | Backend      | FastAPI                                                  |
 | ML Models    | ViT (`timm`), Random Forest, XGBoost, Gradient Boost     |
 | Audio Tools  | Whisper, Torchaudio, PyDub, librosa                      |
-| Dataset      | RAVDESS (processed into spectrograms)                   |
+| Dataset      | RAVDESS (processed into spectrograms)                    |
+| DataBase     | MongoDB                                                  |
 
----
 
-## 🧪 Machine Learning Models
 
-### 🎨 Emotion Recognition (ViT)
+##  Machine Learning Models
+
+### Emotion Recognition (ViT)
 
 - **Input**: Audio converted to spectrograms
 - **Model**: Vision Transformer (ViT)
@@ -67,10 +67,9 @@ This project is designed to assist in mental health awareness and provide helpfu
   - Comfort
   - Peace
 
-### 🔮 Therapy Session Predictor
+###  Therapy Session Predictor
 
 - **Model Type**: Ensemble (Random Forest, XGBoost, Gradient Boost)
 - **Inputs**: Emotion scores, user’s age, gender
 - **Output**: Number of therapy sessions recommended
 
----
