@@ -19,7 +19,7 @@ This project is designed to assist in mental health awareness and provide helpfu
 
 ## Architecture Overview
 
-![System Architecture](./assets/cognitive_vox_architecture.png)
+![System Architecture](./Screenshot%202025-07-15%20160140.png)
 
 > The above diagram shows the complete pipeline — from audio input to transcription, emotion classification, and therapy prediction — built with FastAPI and machine learning models.
 
