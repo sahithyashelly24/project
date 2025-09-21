@@ -47,7 +47,7 @@ const Home = ({ onStart, user }) => {
       <div className="headline-section">
         <div className="background-video">
           <video autoPlay muted loop playsInline>
-            <source src="https://media.istockphoto.com/id/1395917168/video/a-young-woman-having-a-therapy-session-with-a-psychologist-a-patient-talking-with-a-therapist.mp4?s=mp4-640x640-is&k=20&c=p7OFlSTA8gYWhJPAug3BW8NKpXLOoA0st-osRCuDuQg=" type="video/mp4" />
+            <source src="https://videos.pexels.com/video-files/7698434/7698434-uhd_2732_1440_25fps.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
