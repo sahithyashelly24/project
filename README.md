@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Cognitive Vox
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> An intelligent audio analysis system helpful to the psychiatrist for managing patient data and using AI based emotion detection and predict therapy needs — built with deep learning and Transformers.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## About the Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Cognitive Vox** is a voice-based emotional analysis and therapy prediction system. Users can upload or record their patients voice, and the app will:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Transcribe** the audio using Whisper.
+2. **Analyze emotions** using a Vision Transformer (ViT) trained on spectrograms.
+3. **Predict** the number of therapy sessions required based on the emotions, user’s age, and gender.
+4. **Track** emotional changes over time using visualizations.
 
-### `npm test`
+This project is designed to assist in mental health awareness and provide helpful insights from just a voice sample.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Architecture Overview
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![System Architecture](./Screenshot%202025-07-15%20160140.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> The above diagram shows the complete pipeline — from audio input to transcription, emotion classification, and therapy prediction — built with FastAPI and machine learning models.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-  **Audio Input**: Upload or record voice.
+-  **Emotion Detection**: Classifies emotions like Happy, Sadness, Anger, Anxiety, etc.
+-  **Speech Transcription**: Converts speech to text using Whisper.
+-  **Therapy Prediction**: Estimates how many sessions a user may need.
+-  **Emotion History Tracking**: Visual display of progress over time.
+-  **Data Management and Safety**: Takes login and data isolation for each different login and stored in Database.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## 🛠 Tech Stack
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Layer        | Tools/Libraries Used                                     |
+|--------------|-----------------------------------------------------------|
+| Frontend     | React.js (with charts and user profile UI)               |
+| Backend      | FastAPI                                                  |
+| ML Models    | ViT (`timm`), Random Forest, XGBoost, Gradient Boost     |
+| Audio Tools  | Whisper, Torchaudio, PyDub, librosa                      |
+| Dataset      | RAVDESS (processed into spectrograms)                    |
+| DataBase     | MongoDB                                                  |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##  Machine Learning Models
 
-### Analyzing the Bundle Size
+### Emotion Recognition (ViT)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Input**: Audio converted to spectrograms
+- **Model**: Vision Transformer (ViT)
+- **Trained On**: RAVDESS dataset (10 custom emotions)
+- **Emotions Detected**:
+  - Happy
+  - Sadness
+  - Anger
+  - Anxiety
+  - Calmness
+  - Frustration
+  - Hope
+  - Confusion
+  - Comfort
+  - Peace
 
-### Making a Progressive Web App
+###  Therapy Session Predictor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Model Type**: Ensemble (Random Forest, XGBoost, Gradient Boost)
+- **Inputs**: Emotion scores, user’s age, gender
+- **Output**: Number of therapy sessions recommended
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
