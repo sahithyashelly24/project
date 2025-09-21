@@ -308,7 +308,7 @@ button:hover:not(:disabled) {
 
 .records-table td.transcript-cell {
   max-width: 200px;
-  max-height: 150px;
+  max-height: 155px;
   overflow-y: auto;
   overflow-x: hidden;
   white-space: pre-wrap;
@@ -379,24 +379,144 @@ button:hover:not(:disabled) {
   margin-top: 20px;
 }
 
-
-.transcript-cell {
-  max-width: 200px;
-  overflow-x: auto;
-  word-break: break-word;
-}
-
+/* History */
 .toggle-history-btn {
-  background-color: #444;
+  margin-top: 20px;
+  padding: 10px 18px;
+  background-color: #4caf50;
   color: white;
-  padding: 10px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
 }
 
-.toggle-history-btn:hover {
-  background-color: #666;
+.previous-records-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  max-height: 400px;
+  overflow: auto;
+  padding-left: 25px; /* Add or reduce this value as needed */
+  margin-left: 15px;
 }
 
+.session-record-card {
+  background-color: #f3f3f3;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.session-record-card audio {
+  margin: 10px 0;
+}
+
+button:disabled {
+  background-color: lightblue !important;
+  cursor: not-allowed;
+}
+
+
+button:hover:not(:disabled) {
+  background-color: #00327a;
+}
+
+.centered-graph {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #2f2d2d;
+}
+
+.graph-and-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.toggle-history-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.records-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #333; /* dark grey */
+  color: white;
+  border: 3px solid black;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* outer border */
+}
+
+.records-table th,
+.records-table td {
+  border: none; /* removes internal lines */
+  padding: 10px;
+  text-align: left;
+}
+
+.records-table tr {
+  border-bottom: none;
+}
+
+.records-table th {
+  background-color: #444;
+}
+
+.records-table td.transcript-cell {
+  max-width: 200px;
+  max-height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  word-break: break-word;
+  display: block;
+  background-color: #333;
+}
+
+/* Stylish scrollbar for WebKit browsers (Chrome, Edge, Safari) */
+.records-table td.transcript-cell::-webkit-scrollbar {
+  width: 8px;
+}
+
+.records-table td.transcript-cell::-webkit-scrollbar-track {
+  background: #333; /* grey track */
+}
+
+.records-table td.transcript-cell::-webkit-scrollbar-thumb {
+  background-color: white; /* white scroll thumb */
+  border-radius: 4px;
+}
+
+/* Firefox scrollbar styles */
+.records-table td.transcript-cell {
+  scrollbar-width: thin;
+  scrollbar-color: white #333;
+}
+.previous-records-container::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.previous-records-container::-webkit-scrollbar-track {
+  background: #d3d3d3;
+  border-radius: 10px;
+}
+
+.previous-records-container::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+}
